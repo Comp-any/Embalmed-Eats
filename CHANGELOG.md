@@ -2,6 +2,10 @@
 
 Each version's section becomes its GitHub release notes, and from there its changelog on the Mod DB.
 
+## 1.1.2
+
+- The mod's `modinfo.json` now gives its GitHub page as its website, so tools that read it (such as Vintage Auto Update) can find its releases there too. Nothing else changes; players and servers on 1.1.1 can mix with 1.1.2.
+
 ## 1.1.1
 
 - Fixed: taking items from the Embalmed Eats creative tabs could give you the wrong item (this could also affect other creative tabs). The server and players now have exactly the same creative lists.
