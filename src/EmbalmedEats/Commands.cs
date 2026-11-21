@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Text;
 using EmbalmedEats.Core;
+using EmbalmedEats.Doctor;
 using EmbalmedEats.Patches;
 using EmbalmedEats.Recipes;
 using EmbalmedEats.Toxicity;
@@ -19,6 +20,8 @@ namespace EmbalmedEats;
 ///   toxicity [player]   show toxicity
 ///   cure [player]       clear toxicity and its effects
 ///   info                show what the mod detected and patched
+///   check               the sanity checks Vintage Doctor shows, as text (works without the doctor)
+///   fix name [argument] what the checks' fix buttons do
 ///   selftest            run the built-in checks (server console or admin)
 /// </summary>
 public static class Commands
@@ -93,6 +96,29 @@ public static class Commands
                 .HandleWith(args => TextCommandResult.Success(Info(sapi)))
             .EndSubCommand()
 
+            .BeginSubCommand("check")
+                .WithDescription("Check whether Embalmed Eats is set up properly (the same checks Vintage Doctor shows)")
+                .RequiresPrivilege(Privilege.controlserver)
+                .HandleWith(args =>
+                {
+                    string lang = LangCode(args);
+                    string text = Finding.PlainText(ModChecks.Server(sapi, lang, null), lang);
+                    if (!sapi.ModLoader.IsModEnabled("vintagedoctor")) text += "\n" + Lang.GetL(lang, "embalmedeats:doctor-plain-nodoctor");
+                    return TextCommandResult.Success(text);
+                })
+            .EndSubCommand()
+
+            .BeginSubCommand("fix")
+                .WithDescription("Do one of the fixes /embalmedeats check offers: default <setting>, methods-on, drop-unmatched, cure <player uid|all>")
+                .RequiresPrivilege(Privilege.controlserver)
+                .WithArgs(p.Word("name"), p.OptionalAll("argument"))
+                .HandleWith(args =>
+                {
+                    var (result, failed) = DoctorFixes.Run(sapi, args[0] as string ?? "", args[1] as string ?? "", LangCode(args));
+                    return failed ? TextCommandResult.Error(result) : TextCommandResult.Success(result);
+                })
+            .EndSubCommand()
+
             .BeginSubCommand("selftest")
                 .WithDescription("Run the mod's built-in checks")
                 .RequiresPrivilege(Privilege.controlserver)
@@ -109,6 +135,8 @@ public static class Commands
         ("/embalmedeats toxicity [player]", "help-toxicity", null),
         ("/embalmedeats cure [player]", "help-cure", Privilege.commandplayer),
         ("/embalmedeats info", "help-info", Privilege.controlserver),
+        ("/embalmedeats check", "help-check", Privilege.controlserver),
+        ("/embalmedeats fix <name> [argument]", "help-fix", Privilege.controlserver),
         ("/embalmedeats selftest", "help-selftest", Privilege.controlserver),
     };
 

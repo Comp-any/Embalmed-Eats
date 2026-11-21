@@ -10,6 +10,27 @@ using Vintagestory.GameContent;
 
 namespace EmbalmedEats.Core;
 
+/// <summary>Which rule decided whether something can be preserved (<see cref="Preservation.Explain"/>).</summary>
+public enum FoodReason
+{
+    Missing, NeverList, AlwaysList, ModSaysYes, ModSaysNo, OwnItem, Liquid, MealContainer, Nutrition, MealIngredient, Rots, NotFood
+}
+
+public readonly struct FoodVerdict
+{
+    public readonly bool Preservable;
+    public readonly FoodReason Reason;
+    /// <summary>For the config lists: the entry that matched.</summary>
+    public readonly string? Pattern;
+
+    public FoodVerdict(bool preservable, FoodReason reason, string? pattern = null)
+    {
+        Preservable = preservable;
+        Reason = reason;
+        Pattern = pattern;
+    }
+}
+
 public static class PreservationMethods
 {
     public const string Wax = "wax";
@@ -126,38 +147,67 @@ public static class Preservation
         return result;
     }
 
-    static bool ComputePreservable(CollectibleObject coll)
+    static bool ComputePreservable(CollectibleObject coll) => Explain(coll).Preservable;
+
+    /// <summary>
+    /// Whether this kind of item/block can be preserved, and why: the same rules as <see cref="IsPreservableCollectible"/>
+    /// (the config's never list, then its always list, then <see cref="ExplainDefault"/>). Not cached: for the
+    /// doctor's pages and the check command.
+    /// </summary>
+    public static FoodVerdict Explain(CollectibleObject? coll)
     {
-        if (coll.IsMissing) return false;
-        if (MatchesAny(Config.NeverPreservable, coll.Code)) return false;
-        if (MatchesAny(Config.AlwaysPreservable, coll.Code)) return true;
-        return IsFoodByDefault(coll);
+        if (coll?.Code == null || coll.IsMissing) return new FoodVerdict(false, FoodReason.Missing);
+        string? never = FirstMatch(Config.NeverPreservable, coll.Code);
+        if (never != null) return new FoodVerdict(false, FoodReason.NeverList, never);
+        string? always = FirstMatch(Config.AlwaysPreservable, coll.Code);
+        if (always != null) return new FoodVerdict(true, FoodReason.AlwaysList, always);
+        return ExplainDefault(coll);
     }
 
     /// <summary>
     /// The built-in food detection, without the config's always/never lists. Used where the server and every
     /// player must get the same answer before the server's config has reached the player (the creative tabs).
     /// </summary>
-    public static bool IsFoodByDefault(CollectibleObject? coll)
+    public static bool IsFoodByDefault(CollectibleObject? coll) => ExplainDefault(coll).Preservable;
+
+    /// <summary>The built-in food detection (<see cref="IsFoodByDefault"/>), with the rule that decided it.</summary>
+    public static FoodVerdict ExplainDefault(CollectibleObject? coll)
     {
-        if (coll?.Code == null || coll.IsMissing) return false;
+        if (coll?.Code == null || coll.IsMissing) return new FoodVerdict(false, FoodReason.Missing);
 
         // Modders can opt in or out with an attribute: "embalmedeatsPreservable": true/false
         var attrs = coll.Attributes;
-        if (attrs?["embalmedeatsPreservable"].Exists == true) return attrs["embalmedeatsPreservable"].AsBool();
+        if (attrs?["embalmedeatsPreservable"].Exists == true)
+        {
+            bool yes = attrs["embalmedeatsPreservable"].AsBool();
+            return new FoodVerdict(yes, yes ? FoodReason.ModSaysYes : FoodReason.ModSaysNo);
+        }
 
-        if (coll.Code.Domain == "embalmedeats") return false;
-        if (coll.MatterState == EnumMatterState.Liquid || coll.MatterState == EnumMatterState.Gas) return false;
-        if (attrs?["waterTightContainerProps"].Exists == true) return false;
+        if (coll.Code.Domain == "embalmedeats") return new FoodVerdict(false, FoodReason.OwnItem);
+        if (coll.MatterState == EnumMatterState.Liquid || coll.MatterState == EnumMatterState.Gas) return new FoodVerdict(false, FoodReason.Liquid);
+        if (attrs?["waterTightContainerProps"].Exists == true) return new FoodVerdict(false, FoodReason.Liquid);
 
         // Meal bowls, pies, cooking pots with a meal, crocks
-        if (coll is IBlockMealContainer) return true;
+        if (coll is IBlockMealContainer) return new FoodVerdict(true, FoodReason.MealContainer);
 
-        if (coll.NutritionProps != null) return true;
-        if (attrs?["nutritionPropsWhenInMeal"].Exists == true) return true;
-        if (coll.TransitionableProps?.Any(p => p?.Type == EnumTransitionType.Perish) == true) return true;
+        if (coll.NutritionProps != null) return new FoodVerdict(true, FoodReason.Nutrition);
+        if (attrs?["nutritionPropsWhenInMeal"].Exists == true) return new FoodVerdict(true, FoodReason.MealIngredient);
+        if (Rots(coll)) return new FoodVerdict(true, FoodReason.Rots);
 
-        return false;
+        return new FoodVerdict(false, FoodReason.NotFood);
+    }
+
+    static bool Rots(CollectibleObject coll) => coll.TransitionableProps?.Any(p => p?.Type == EnumTransitionType.Perish) == true;
+
+    /// <summary>
+    /// True for things a player would think of as food (they feed you, go in meals, rot, or hold a meal), whatever
+    /// the config says. The doctor only explains a "no" for these, not for every tool and stone.
+    /// </summary>
+    public static bool LooksLikeFood(CollectibleObject? coll)
+    {
+        if (coll?.Code == null || coll.IsMissing) return false;
+        return coll is IBlockMealContainer || coll.NutritionProps != null
+            || coll.Attributes?["nutritionPropsWhenInMeal"].Exists == true || Rots(coll);
     }
 
     /// <summary>True if this particular stack can be preserved right now.</summary>
@@ -181,15 +231,18 @@ public static class Preservation
         return true;
     }
 
-    public static bool MatchesAny(string[]? patterns, AssetLocation code)
+    public static bool MatchesAny(string[]? patterns, AssetLocation code) => FirstMatch(patterns, code) != null;
+
+    /// <summary>The first of <paramref name="patterns"/> (wildcards allowed) that matches the code, or null.</summary>
+    public static string? FirstMatch(string[]? patterns, AssetLocation code)
     {
-        if (patterns == null) return false;
+        if (patterns == null) return null;
         foreach (string pattern in patterns)
         {
             if (string.IsNullOrWhiteSpace(pattern)) continue;
-            if (WildcardUtil.Match(new AssetLocation(pattern), code)) return true;
+            if (WildcardUtil.Match(new AssetLocation(pattern), code)) return pattern;
         }
-        return false;
+        return null;
     }
 
     public static string MethodName(string method) => Lang.Get("embalmedeats:method-" + method);

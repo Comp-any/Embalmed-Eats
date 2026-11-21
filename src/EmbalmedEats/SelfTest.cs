@@ -259,7 +259,7 @@ public static class SelfTest
             string help = Commands.HelpText(null);
             if (!help.StartsWith(Lang.Get("embalmedeats:help-title"))) return "no title line";
             if (help.Contains("embalmedeats:help")) return "missing lang entry in: " + help;
-            foreach (string sub in new[] { "help", "preserve", "unpreserve", "toxicity", "cure", "info", "selftest" })
+            foreach (string sub in new[] { "help", "preserve", "unpreserve", "toxicity", "cure", "info", "check", "fix", "selftest" })
             {
                 if (!help.Contains("/embalmedeats " + sub)) return "doesn't list " + sub;
             }
@@ -402,6 +402,9 @@ public static class SelfTest
             if (meatStacks == null || !meatStacks.Any(st => st.Collectible == meat)) return "raw meat's normal stack missing";
             return null;
         });
+
+        // What it hands Vintage Doctor (works with or without the doctor installed)
+        SelfTestDoctor.Run(sapi, Check);
 
         return Report(sapi, results);
 

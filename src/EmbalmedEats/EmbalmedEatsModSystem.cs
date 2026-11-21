@@ -3,6 +3,7 @@ using System.Linq;
 using EmbalmedEats.Config;
 using EmbalmedEats.Core;
 using EmbalmedEats.Decoration;
+using EmbalmedEats.Doctor;
 using EmbalmedEats.Patches;
 using EmbalmedEats.Recipes;
 using EmbalmedEats.Toxicity;
@@ -26,6 +27,11 @@ public class EmbalmedEatsModSystem : ModSystem
 {
     public const string ModId = "embalmedeats";
     public const string ConfigFile = "embalmedeats.json";
+
+    /// <summary>On a player's game: the server's settings have arrived (always true in single player).</summary>
+    public static bool ConfigReceived;
+    /// <summary>Why the settings file couldn't be read at this start, and where the unreadable file was kept (for the checks).</summary>
+    public static string? ConfigLoadError, ConfigBackup;
 
     static readonly object patchLock = new();
     static Harmony? harmony;
@@ -98,6 +104,10 @@ public class EmbalmedEatsModSystem : ModSystem
     void LoadConfig(ICoreAPI api)
     {
         EmbalmedEatsConfig? cfg = null;
+        if (api.Side == EnumAppSide.Server)
+        {
+            ConfigLoadError = ConfigBackup = null;
+        }
         try
         {
             cfg = api.LoadModConfig<EmbalmedEatsConfig>(ConfigFile);
@@ -105,6 +115,17 @@ public class EmbalmedEatsModSystem : ModSystem
         catch (Exception e)
         {
             api.Logger.Error("[Embalmed Eats] Could not read ModConfig/{0}, using defaults: {1}", ConfigFile, e.Message);
+            if (api.Side == EnumAppSide.Server)
+            {
+                // The defaults are written back below: keep the unreadable file first, so the changes in it aren't lost
+                ConfigLoadError = e.Message;
+                try
+                {
+                    ConfigBackup = DoctorFixes.Backup(api, ConfigFile);
+                    if (ConfigBackup != null) api.Logger.Warning("[Embalmed Eats] The unreadable settings file was kept as {0}", ConfigBackup);
+                }
+                catch (Exception be) { api.Logger.Warning("[Embalmed Eats] Could not keep a copy of the unreadable settings file: {0}", be.Message); }
+            }
         }
 
         cfg ??= new EmbalmedEatsConfig();
@@ -168,11 +189,25 @@ public class EmbalmedEatsModSystem : ModSystem
         serverChannel = sapi.Network.GetChannel(ModId);
         sapi.Event.PlayerJoin += SendConfig;
         Commands.Register(sapi, this);
+        // Vintage Doctor's checks, cards, page and fixes, over its event bus (no reference to the doctor needed)
+        DoctorBridge.RegisterServer(sapi);
+    }
+
+    /// <summary>Sends the settings again to everyone playing (after a fix changed them).</summary>
+    public void SendConfigToAll()
+    {
+        if (sapi == null) return;
+        foreach (var player in sapi.World.AllOnlinePlayers)
+        {
+            if (player is IServerPlayer sp && sp.ConnectionState == EnumClientState.Playing) SendConfig(sp);
+        }
     }
 
     public override void StartClientSide(ICoreClientAPI capi)
     {
+        ConfigReceived = capi.IsSinglePlayer;
         capi.Network.GetChannel(ModId).SetMessageHandler<ConfigSyncPacket>(OnConfigReceived);
+        DoctorBridge.RegisterClient(capi, Mod.Info.Version);
         // The documented point where a client has all blocks and items from the server
         capi.Event.BlockTexturesLoaded += () =>
         {
@@ -204,6 +239,7 @@ public class EmbalmedEatsModSystem : ModSystem
             {
                 Preservation.Config = cfg;
                 Preservation.ClearCache();
+                ConfigReceived = true;
             }
         }
         catch (Exception e)

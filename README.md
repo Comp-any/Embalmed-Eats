@@ -52,7 +52,23 @@ Preserved food is kept out of food processing so it can't be turned back into ed
 | `/embalmedeats toxicity [player]` | everyone | Show toxicity |
 | `/embalmedeats cure [player]` | commandplayer privilege | Clear toxicity and its effects |
 | `/embalmedeats info` | controlserver privilege | Show detected foods, generated recipes and patches |
+| `/embalmedeats check` | controlserver privilege | Check whether the mod is set up properly (the same checks Vintage Doctor shows) |
+| `/embalmedeats fix <name> [argument]` | controlserver privilege | Do one of the fixes the check offers: `default <setting>`, `methods-on`, `drop-unmatched`, `cure <player uid\|all>` |
 | `/embalmedeats selftest` | controlserver privilege | Run the built-in checks |
+
+## Vintage Doctor
+
+Embalmed Eats hands Vintage Doctor its own checks over the doctor's event bus, so the doctor is never required and Embalmed Eats has no reference to it. With the doctor installed:
+
+- **On the check-up** (Ctrl+Shift+D or `/doctor`): whether all its changes to the game are in place (and which part of the mod a failed one affects), how much food it found and from which mods, whether each method works, settings that don't do what was most likely meant, an unreadable settings file, and whether the player's game agrees with the server (creative tabs, settings, food). Many cards have a fix: put a setting back to its default, switch the methods back on, take mistyped entries out of the food lists, cure poisoned players.
+- **On the player's own game:** their poisoning and when it wears off, and in multiplayer whether the server's settings arrived.
+- **On the page about an item or block:** whether it can be preserved, why, and how; what the held preserved item is and where it can go.
+- **Its own page**, `/doctor embalmedeats` ("Something is wrong with preserved food"), and `/doctor embalmedeats item <code>`, which goes through the food rules for one thing.
+- **The log:** `assets/embalmedeats/config/vintagedoctor.json` tells the doctor what Embalmed Eats' log lines mean and which settings file is its own.
+
+Without the doctor, `/embalmedeats check` shows the same checks as text.
+
+Fixes that change the settings copy the old file to `ModData/embalmedeats/backups/<date and time>/` first. A settings file that can't be read is copied there too before the defaults replace it.
 
 ## Config
 

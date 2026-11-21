@@ -1,0 +1,80 @@
+{
+  "configFiles": [ "embalmedeats.json" ],
+  "knownProblems": [
+    {
+      "id": "config-unreadable",
+      "match": "[Embalmed Eats] Could not read ModConfig/embalmedeats.json",
+      "side": "server",
+      "level": "info",
+      "title": "Embalmed Eats couldn't read its settings file and used the defaults",
+      "explain": "Usually a missing comma or quote. Embalmed Eats keeps a copy of the unreadable file in ModData/embalmedeats/backups before writing the defaults back.",
+      "advice": "Embalmed Eats' card on the check-up says where the copy is."
+    },
+    {
+      "id": "no-preservative",
+      "match": "[Embalmed Eats] No items found for",
+      "side": "server",
+      "level": "info",
+      "title": "A preserving method of Embalmed Eats has no recipes: none of its wax or resin items are in the game",
+      "explain": "WaxItems or LacquerItems in ModConfig/embalmedeats.json names items that aren't in the game (a typo, or a mod that isn't installed).",
+      "advice": "Embalmed Eats' card on the check-up has a button that puts the default back."
+    },
+    {
+      "id": "patch-problem",
+      "match": "[Embalmed Eats] Patch problem:",
+      "level": "info",
+      "title": "Embalmed Eats couldn't change part of the game",
+      "explain": "Usually the game is newer than this version of Embalmed Eats, or another mod changed the same part of the game.",
+      "advice": "Embalmed Eats' card on the check-up says which part of the mod is affected."
+    },
+    {
+      "id": "patch-failed",
+      "match": "[Embalmed Eats] Failed to patch",
+      "level": "info",
+      "title": "Embalmed Eats couldn't change part of the game",
+      "explain": "Usually the game is newer than this version of Embalmed Eats, or another mod changed the same part of the game.",
+      "advice": "Embalmed Eats' card on the check-up says which part of the mod is affected."
+    },
+    {
+      "id": "setup-step-failed",
+      "match": "[Embalmed Eats] Failed to ",
+      "level": "problem",
+      "title": "Embalmed Eats couldn't finish setting itself up",
+      "explain": "One of its start-up steps (the wax and resin recipes, ground storage, or the creative tabs) failed, so that part is missing this session.",
+      "advice": "The error under this line says why. A bug report helps: /doctor bugreport embalmedeats"
+    },
+    {
+      "id": "bad-config-from-server",
+      "match": "[Embalmed Eats] Bad config from server",
+      "side": "client",
+      "level": "warning",
+      "title": "Your game couldn't read the server's Embalmed Eats settings",
+      "explain": "Your game then uses its own settings, so what can be preserved may look different from what the server does.",
+      "advice": "Use the same version of Embalmed Eats as the server."
+    },
+    {
+      "id": "config-not-sent",
+      "match": "[Embalmed Eats] Could not send config to",
+      "side": "server",
+      "level": "warning",
+      "title": "Embalmed Eats couldn't send its settings to a player",
+      "explain": "That player's game uses its own settings until they join again.",
+      "advice": "Ask them to rejoin."
+    },
+    {
+      "id": "creative-tab-failed",
+      "match": "[Embalmed Eats] Couldn't add",
+      "level": "info",
+      "title": "A food couldn't be put in Embalmed Eats' creative tabs",
+      "explain": "Only the creative tabs are affected: that food can still be preserved the normal way."
+    },
+    {
+      "id": "doctor-answer-failed",
+      "match": "[Embalmed Eats] Answering Vintage Doctor",
+      "level": "warning",
+      "title": "Embalmed Eats' part of this page failed",
+      "explain": "A bug in Embalmed Eats' checks for Vintage Doctor. The rest of the page isn't affected.",
+      "advice": "A bug report helps: /doctor bugreport embalmedeats"
+    }
+  ]
+}

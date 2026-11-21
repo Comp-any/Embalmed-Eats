@@ -22,6 +22,7 @@ version=$(python3 -c "import json;print(json.load(open('modinfo.json'))['version
 stage=$(mktemp -d)
 cp modinfo.json "$stage/"
 [ -f modicon.png ] && cp modicon.png "$stage/"
+[ -f moddb.json ] && cp moddb.json "$stage/"   # the Mod DB page number, next to modinfo.json
 cp -r assets "$stage/"
 cp build-out/EmbalmedEats.dll "$stage/"
 [ -f build-out/EmbalmedEats.pdb ] && cp build-out/EmbalmedEats.pdb "$stage/"
