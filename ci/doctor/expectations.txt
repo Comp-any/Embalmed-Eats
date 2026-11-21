@@ -1,0 +1,8 @@
+ok: the check-up has Embalmed Eats' cards
+ok: the check-up offers our question
+ok: /doctor embalmedeats is our page
+ok: /doctor embalmedeats item is the item's rules
+ok: the mod's page has our cards
+ok: the item page has our card (console)
+ok: rot's item page says why not
+ok: a fix through /doctor fix

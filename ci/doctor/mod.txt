@@ -1,0 +1,48 @@
+21.11.2026 15:16:07 [Server Notification] Handling Console Command /doctor mod embalmedeats
+21.11.2026 15:16:07 [Server Notification] == Embalmed Eats ==
+• Embalmed Eats 1.2.1, by demonic69
+  Mod id embalmedeats; Code mod; runs on: Universal; file EmbalmedEats_v1.2.1.zip
+  Preserve any food (vanilla or modded) as permanent decoration. Embalmed food never rots and keeps its original look, but eating it is a very bad idea. Methods: formaldehyde barrel soak, salt & lime barrel cure, wax dipping and resin lacquer.
+  Its website (https://github.com/Comp-any/Embalmed-Eats) Find Embalmed Eats on the Mod DB (https://mods.vintagestory.at/list/mod?text=Embalmed%20Eats)
+✓ Everything it needs is there (2).
+  The game: wants 1.22.0 or newer, this is 1.22.7
+  Survival Mode: wants * or newer, 1.22.7 is installed
+✓ In the game from this mod: 0 blocks, 2 items, 0 creatures.
+✓ Its config file(s) read fine: embalmedeats.json
+  If the mod acts oddly after an update, an old config is a common reason: starting it afresh puts every setting back to the mod's defaults (the old file is kept in the doctor's backups).
+  Start embalmedeats.json afresh (the old one is kept) (/doctor fix doctor:reset-config embalmedeats.json)
+• It changes the game's code in 48 place(s), 0 of them shared with other mods
+  CollectibleObject.UpdateAndGetTransitionStates
+  BlockContainer.UpdateAndGetTransitionStates
+  BlockCrock.UpdateAndGetTransitionStates
+  BlockPie.UpdateAndGetTransitionStates
+  ItemGem.UpdateAndGetTransitionStates
+  BlockCookedContainer.UpdateAndGetTransitionStates
+  BlockMeal.UpdateAndGetTransitionStates
+  CollectibleObject.UpdateAndGetTransitionState
+  BlockPie.UpdateAndGetTransitionState
+  CollectibleObject.RequiresTransitionableTicking
+  BlockContainer.RequiresTransitionableTicking
+  CollectibleObject.GetNutritionProperties
+  ... and 36 more
+  Mods patch the game's own code where it offers no other way in. It is normal, but it is also what breaks first when the game updates, and two mods patching the same place can get in each other's way.
+
+== Checks from your mods ==
+✓ Embalmed Eats: All 48 of its changes to the game are in place
+  They are what stop preserved food rotting, feeding you and going into recipes, and what let it go on shelves, in display cases and on the ground.
+✓ Embalmed Eats: It can preserve 667 kinds of food (0 of them from other mods)
+  The game: 667
+  57 foods that normally can't go on the ground can once preserved
+  Embalmed Eats' page (/doctor embalmedeats)
+✓ Embalmed Eats: All 4 switched-on preserving methods work
+  Wax dipping: 1 Beeswax per food in the crafting grid (667 recipes)
+  Resin lacquer: 1 Resin per food in the crafting grid (667 recipes)
+  Formaldehyde: 0.25 L of solution per food, sealed for 48 hours
+  Salt and lime cure: 1 curing salt per food, sealed for 120 hours
+
+== Errors and warnings from Embalmed Eats ==
+✓ Nothing from Embalmed Eats in the log this session.
+
+== Next ==
+Switch Embalmed Eats off (/doctor fix doctor:disable-mod embalmedeats) A report about Embalmed Eats (/doctor bugreport embalmedeats) Every mod at a glance (/doctor mods) Back to the check-up (/doctor)
+Saved to ModData/vintagedoctor/last-report-server.txt

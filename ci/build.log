@@ -1,0 +1,12 @@
+  Determining projects to restore...
+  Restored /home/runner/work/Embalmed-Eats/Embalmed-Eats/src/EmbalmedEats/EmbalmedEats.csproj (in 58 ms).
+/home/runner/work/Embalmed-Eats/Embalmed-Eats/src/EmbalmedEats/SelfTestDoctor.cs(196,96): warning CS8604: Possible null reference argument for parameter 'json' in 'JToken JToken.Parse(string json)'. [/home/runner/work/Embalmed-Eats/Embalmed-Eats/src/EmbalmedEats/EmbalmedEats.csproj]
+  EmbalmedEats -> /home/runner/work/Embalmed-Eats/Embalmed-Eats/build-out/EmbalmedEats.dll
+
+Build succeeded.
+
+/home/runner/work/Embalmed-Eats/Embalmed-Eats/src/EmbalmedEats/SelfTestDoctor.cs(196,96): warning CS8604: Possible null reference argument for parameter 'json' in 'JToken JToken.Parse(string json)'. [/home/runner/work/Embalmed-Eats/Embalmed-Eats/src/EmbalmedEats/EmbalmedEats.csproj]
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.97

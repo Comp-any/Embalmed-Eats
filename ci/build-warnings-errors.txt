@@ -1,0 +1,1 @@
+/home/runner/work/Embalmed-Eats/Embalmed-Eats/src/EmbalmedEats/SelfTestDoctor.cs(196,96): warning CS8604: Possible null reference argument for parameter 'json' in 'JToken JToken.Parse(string json)'. [/home/runner/work/Embalmed-Eats/Embalmed-Eats/src/EmbalmedEats/EmbalmedEats.csproj]

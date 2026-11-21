@@ -1,0 +1,37 @@
+Archive:  out/EmbalmedEats_v1.2.1.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      598  2026-11-21 15:13   modinfo.json
+        0  2026-11-21 15:13   assets/
+        0  2026-11-21 15:13   assets/embalmedeats/
+        0  2026-11-21 15:13   assets/embalmedeats/config/
+     3787  2026-11-21 15:13   assets/embalmedeats/config/vintagedoctor.json
+        0  2026-11-21 15:13   assets/embalmedeats/config/handbook/
+      130  2026-11-21 15:13   assets/embalmedeats/config/handbook/embalmedeats-guide.json
+        0  2026-11-21 15:13   assets/embalmedeats/textures/
+        0  2026-11-21 15:13   assets/embalmedeats/textures/item/
+        0  2026-11-21 15:13   assets/embalmedeats/textures/item/resource/
+     1149  2026-11-21 15:13   assets/embalmedeats/textures/item/resource/curingsalt.png
+        0  2026-11-21 15:13   assets/embalmedeats/textures/block/
+        0  2026-11-21 15:13   assets/embalmedeats/textures/block/resource/
+     1149  2026-11-21 15:13   assets/embalmedeats/textures/block/resource/curingsalt.png
+        0  2026-11-21 15:13   assets/embalmedeats/textures/block/liquid/
+     1667  2026-11-21 15:13   assets/embalmedeats/textures/block/liquid/formaldehyde.png
+        0  2026-11-21 15:13   assets/embalmedeats/patches/
+      613  2026-11-21 15:13   assets/embalmedeats/patches/creativetabs.json
+        0  2026-11-21 15:13   assets/embalmedeats/lang/
+    20320  2026-11-21 15:13   assets/embalmedeats/lang/en.json
+        0  2026-11-21 15:13   assets/embalmedeats/recipes/
+        0  2026-11-21 15:13   assets/embalmedeats/recipes/grid/
+      265  2026-11-21 15:13   assets/embalmedeats/recipes/grid/curingsalt.json
+        0  2026-11-21 15:13   assets/embalmedeats/recipes/barrel/
+      270  2026-11-21 15:13   assets/embalmedeats/recipes/barrel/formaldehyde.json
+        0  2026-11-21 15:13   assets/embalmedeats/itemtypes/
+     1221  2026-11-21 15:13   assets/embalmedeats/itemtypes/formaldehydeportion.json
+     1465  2026-11-21 15:13   assets/embalmedeats/itemtypes/curingsalt.json
+    70618  2026-11-21 15:13   modicon.png
+   160256  2026-11-21 15:13   EmbalmedEats.dll
+    48316  2026-11-21 15:13   EmbalmedEats.pdb
+       18  2026-11-21 15:13   moddb.json
+---------                     -------
+   311842                     32 files
