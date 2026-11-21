@@ -4,7 +4,7 @@ Each version's section becomes its GitHub release notes, and from there its chan
 
 ## 1.2.1
 
-- Fixed: with Vintage Doctor, single player (and multiplayer) always showed the problem "Taking Embalmed Eats items from the creative tabs may give you the wrong item". The tabs were fine: the check read the items of your game's lists before the game had looked them up, so they never matched the server's. It now compares each tab the way the creative inventory shows it.
+- Fixed: with Vintage Doctor, single player (and multiplayer) always showed the problem "Taking Embalmed Eats items from the creative tabs may give you the wrong item". The check could read your game's lists before the game had looked their items up, and then they never matched the server's. It now compares each tab the way the creative inventory shows it.
 - If the tabs really do differ, the card now says how: which foods are in the tabs on only one side, which tabs have a different number of entries, and whether your game had to make the tabs itself.
 
 ## 1.2.0
