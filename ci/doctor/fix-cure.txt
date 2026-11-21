@@ -1,0 +1,4 @@
+21.11.2026 09:30:31 [Server Notification] Handling Console Command /doctor fix bus:embalmedeats:cure all
+21.11.2026 09:30:31 [Server Notification] [Embalmed Eats] Vintage Doctor fix embalmedeats:cure (all): Cured 0 player(s).
+21.11.2026 09:30:31 [Server Notification] [vintagedoctor] Fix 'bus:embalmedeats:cure' (all) asked for by the console: Cured 0 player(s).
+21.11.2026 09:30:31 [Server Notification] Cured 0 player(s).

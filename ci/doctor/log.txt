@@ -1,0 +1,4 @@
+21.11.2026 09:30:39 [Server Notification] Handling Console Command /doctor log embalmedeats
+21.11.2026 09:30:39 [Server Notification] == Errors and warnings from Embalmed Eats ==
+✓ Nothing from Embalmed Eats in the log this session.
+Saved to ModData/vintagedoctor/last-report-server.txt

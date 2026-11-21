@@ -1,0 +1,369 @@
+21.11.2026 09:28:10 [Server Notification] Server logger started.
+21.11.2026 09:28:10 [Server Notification] Game Version: v1.22.7 (Stable)
+21.11.2026 09:28:10 [Server Notification] C# Framework: .net 10.0.15
+21.11.2026 09:28:10 [Server Notification] Zstd Version: 1.5.7
+21.11.2026 09:28:10 [Server Notification] Operating System: Linux (Ubuntu 26.04.1 LTS) [Kernel 7.0.0.1020]
+21.11.2026 09:28:10 [Server Notification] CPU Cores: 4
+21.11.2026 09:28:10 [Server Notification] CPU: INTEL(R) XEON(R) PLATINUM 8573C
+21.11.2026 09:28:10 [Server Notification] Available RAM: 15982 MB
+21.11.2026 09:28:10 [Server Event] Launching server...
+21.11.2026 09:28:10 [Server Event] Server v1.22.7, network v1.22.6, api v1.22.0
+21.11.2026 09:28:10 [Server Notification] Entering runphase Initialization
+21.11.2026 09:28:10 [Server Event] Loading configuration...
+21.11.2026 09:28:10 [Server Notification] Entering runphase Configuration
+21.11.2026 09:28:10 [Server Notification] serverconfig.json not found, creating new one
+21.11.2026 09:28:11 [Server Notification] Loading savegame
+21.11.2026 09:28:11 [Server Notification] Create new save game data. Playstyle: surviveandbuild
+21.11.2026 09:28:11 [Server Notification] Savegame ~/work/Embalmed-Eats/Embalmed-Eats/vsdata/Saves/default.vcdbs loaded
+21.11.2026 09:28:11 [Server Notification] World size = 1024000 256 1024000
+21.11.2026 09:28:11 [Server Notification] Start discovering assets
+21.11.2026 09:28:11 [Server Notification] Found 2 base assets in category blocktypes
+21.11.2026 09:28:11 [Server Notification] Found 0 base assets in category itemtypes
+21.11.2026 09:28:11 [Server Notification] Found 35 base assets in category lang
+21.11.2026 09:28:11 [Server Notification] Found 0 base assets in category patches
+21.11.2026 09:28:11 [Server Notification] Found 24 base assets in category config
+21.11.2026 09:28:11 [Server Notification] Found 0 base assets in category worldproperties
+21.11.2026 09:28:11 [Server Notification] Found 1 base assets in category sounds
+21.11.2026 09:28:11 [Server Notification] Found 230 base assets in category shapes
+21.11.2026 09:28:11 [Server Notification] Found 21 base assets in category textures
+21.11.2026 09:28:11 [Server Notification] Found 0 base assets in category recipes
+21.11.2026 09:28:11 [Server Notification] Found 0 base assets in category worldgen
+21.11.2026 09:28:11 [Server Notification] Found 3 base assets in category entities
+21.11.2026 09:28:11 [Server Notification] Found 316 base assets in total
+21.11.2026 09:28:11 [Server Event] Building assets...
+21.11.2026 09:28:11 [Server Notification] Entering runphase LoadAssets
+21.11.2026 09:28:11 [Server Notification] Will search the following paths for mods:
+21.11.2026 09:28:11 [Server Notification]     ~/work/Embalmed-Eats/Embalmed-Eats/vs/Mods
+21.11.2026 09:28:11 [Server Notification]     ~/work/Embalmed-Eats/Embalmed-Eats/vsdata/Mods
+21.11.2026 09:28:12 [Server Notification] Found 4 mods (0 disabled)
+21.11.2026 09:28:12 [Server Notification] Mods, sorted by dependency: game, creative, survival, embalmedeats
+21.11.2026 09:28:12 [Server Notification] Instantiated 149 mod systems from 4 enabled mods
+21.11.2026 09:28:12 [Server Notification] External Origins in load order: modorigin@~/work/Embalmed-Eats/Embalmed-Eats/vs/assets/creative/, modorigin@~/work/Embalmed-Eats/Embalmed-Eats/vs/assets/survival/, mod@EmbalmedEats_v1.2.0.zip
+21.11.2026 09:28:12 [Server Notification] Found 541 external assets in category blocktypes
+21.11.2026 09:28:12 [Server Notification] Found 317 external assets in category itemtypes
+21.11.2026 09:28:12 [Server Notification] Found 1 external assets in category lang
+21.11.2026 09:28:12 [Server Notification] Found 11 external assets in category patches
+21.11.2026 09:28:12 [Server Notification] Found 130 external assets in category config
+21.11.2026 09:28:12 [Server Notification] Found 25 external assets in category worldproperties
+21.11.2026 09:28:12 [Server Notification] Found 1 external assets in category sounds
+21.11.2026 09:28:12 [Server Notification] Found 6123 external assets in category shapes
+21.11.2026 09:28:12 [Server Notification] Found 28 external assets in category textures
+21.11.2026 09:28:12 [Server Notification] Found 421 external assets in category recipes
+21.11.2026 09:28:12 [Server Notification] Found 1455 external assets in category worldgen
+21.11.2026 09:28:12 [Server Notification] Found 74 external assets in category entities
+21.11.2026 09:28:12 [Server Notification] Found 0 external assets in category compatibility
+21.11.2026 09:28:12 [Server Notification] Reloaded lang file with mod assets
+21.11.2026 09:28:13 [Server Notification] [Embalmed Eats] Applied 48 patches (11 transition, 4 nutrition, 3 eating, 9 crafting, 2 barrel, 3 display). 0 problems.
+21.11.2026 09:28:13 [Server Notification] Compatibility lib: 0 assets added, 0 assets replaced.
+21.11.2026 09:28:13 [Server Notification] JsonPatch Loader: 18 patches total, successfully applied 18 patches, unmet conditions on 23 patches, no errors
+21.11.2026 09:28:16 [Server Notification] Loaded 4470 unique items
+21.11.2026 09:28:20 [Server Notification] Loaded 14089 unique blocks
+21.11.2026 09:28:21 [Server Notification] Loaded 820 unique entitiess
+21.11.2026 09:28:21 [Server Notification] BlockLoader: Entities, Blocks and Items loaded
+21.11.2026 09:28:21 [Server Event] Remapping blocks and items...
+21.11.2026 09:28:21 [Server Debug] Block IDs not found in savegame.
+21.11.2026 09:28:21 [Server Debug] Found 0 missing blocks
+21.11.2026 09:28:21 [Server Debug] Added 14091 new blocks to the mapping
+21.11.2026 09:28:21 [Server Debug] Block IDs have been written to savegame. Saved max BlockID was 14090
+21.11.2026 09:28:21 [Server Debug] ItemID Remapper: Begin
+21.11.2026 09:28:21 [Server Debug] Item IDs not found in savegame.
+21.11.2026 09:28:21 [Server Debug] Found 0 Item requiring remapping
+21.11.2026 09:28:21 [Server Debug] Found 0 missing Items
+21.11.2026 09:28:21 [Server Debug] Added 4470 new Items to the mapping
+21.11.2026 09:28:21 [Server Debug] Item IDs have been written to savegame
+21.11.2026 09:28:21 [Server Event] 15 cooking recipes loaded
+21.11.2026 09:28:21 [Server Event] 9 metal alloys loaded
+21.11.2026 09:28:22 [Server Event] 1153 grid recipes loaded from 269 files
+21.11.2026 09:28:22 [Server Event] 44 smithing recipes loaded from 43 files
+21.11.2026 09:28:22 [Server Event] 31 clay forming recipes loaded from 31 files
+21.11.2026 09:28:22 [Server Event] 12 knapping recipes loaded from 12 files
+21.11.2026 09:28:23 [Server Event] 91 barrel recipe recipes loaded from 42 files
+21.11.2026 09:28:23 [Server Notification] Tags registry was locked.
+21.11.2026 09:28:23 [Server Notification] Entering runphase AssetsFinalize
+21.11.2026 09:28:23 [Server Notification] [Embalmed Eats] Generated 1334 wax/resin crafting recipes for 667 preservable foods.
+21.11.2026 09:28:23 [Server Notification] [Embalmed Eats] Ground storage added to 57 preservable items that didn't have it (Server).
+21.11.2026 09:28:23 [Server Notification] [Embalmed Eats] Creative tabs: 518 foods added.
+21.11.2026 09:28:23 [Server Event] Server assets loaded, parsed, registered and finalized
+21.11.2026 09:28:23 [Server Event] Initialising systems...
+21.11.2026 09:28:23 [Server Notification] Entering runphase LoadGamePre
+21.11.2026 09:28:23 [Server Notification] Reloaded 19 weather patterns, 5 wind patterns and 5 weather events
+21.11.2026 09:28:23 [Server Notification] Started 126 systems on Server:
+21.11.2026 09:28:23 [Server Notification]     Mod 'VSEssentials.dll' (game):
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.Core
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenTerra
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenSnowLayer
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.EntityPartitioning
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ErrorReporter
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenTerraPostProcess
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.ModCompatiblityUtil
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.NoObf.ModJsonPatchLoader
+21.11.2026 09:28:23 [Server Notification]         FluffyClouds.FluffyCloudsModSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.Systems.ModSystemTfEditFromAttributes
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.Essentials.PathfindSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.Essentials.PathFindDebug
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.Essentials.PathfindingAsync
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.JsonExport
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.ModBasicBlocksLoader
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenMaps
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenRockStrataNew
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenHotSprings
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenCreatures
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.ModSystemWorldGenStructures
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemItemRendererOptimizer
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.AiRuntimeConfig
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemSyncHarvestableDropsToClient
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemEmotes
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.LeafBlockDecay
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.POIRegistry
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.RoomRegistry
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.WeatherSystemCommands
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.WeatherSystemServer
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.SystemRemotePlayerTracking
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.WorldMapManager
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenDeposits
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.NoObf.ModRegistryObjectTypeLoader
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.LoadColorMaps
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenCaves
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenStructures
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.WgenCommands
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenBlockLayers
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenPonds
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ClothManager
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenStructuresPosPass
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenVegetationAndPatches
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenRivulets
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenLightSurvival
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.CollectibleBuffDebug
+21.11.2026 09:28:23 [Server Notification]     Mod 'VSSurvivalMod.dll' (survival):
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemControlPoints
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.SurvivalCoreSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.Systems.StoryLockableDoor
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.Client.NoObf.StoryGenFailedSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.UpgradeTasks
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.ChiselBlockBulkSetMaterial
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.ModSystemDetailModeSync
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.NpcControl
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.ModSystemTiledDungeons
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemExplosionAffectedStability
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.MyceliumSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModsystemButterflySpawnCondsExtra
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemFishInstaFlee
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemCatchCreature
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.FishingSupportModSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemGliding
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemSnowShoveling
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemSubTongsDurability
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemSwoopDev
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.Timeswitch
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ClutterBookshelfUtil
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ScreenshakeToClientModSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemResoArchiveCommands
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.StoryStructuresSpawnConditions
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemNPCHairStyling
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemSkinnableAdditions
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemVillagerDebug
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemAuction
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemBlockReinforcement
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.Core
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemBoatingSoundAndRatlineStamina
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.CharacterSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.CustomSpawnConditions
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.VariablesModSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModsystemElevator
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ActivityModSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ActivityEditorSystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemFarming
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemCommandHandbook
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemTutorial
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.HeldItemMouseInputHandler
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemCorpseReturnTeleporter
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemNightVision
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.TobiasTeleporter
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModJournal
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.LiquidItemStackRenderer
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemStructureLocator
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModLootRandomizer
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemEntityOwnership
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemRifts
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemRiftWeather
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSleeping
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemSupportBeamPlacer
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.TeleporterManager
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModTemperature
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.SystemTemporalStability
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.TemporalStabilityEffects
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemClimateSpecificTraderTypes
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemWearableStats
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemEditableBook
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.Mechanics.ModSystemWindTurbulence
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.Mechanics.MechanicalPowerMod
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenDungeons
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.GenStoryStructures
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.WgenCommandsExt
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenDevastationLayer
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.RecipeRegistrySystem
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.RecipeLoader
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemFishDepletion
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemWormGrunting
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemFireFromLightning
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemOreMap
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemSnowballs
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.HumanoidOutfits
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.ModSystemDevastationEffects
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.GameContent.DisableRecipeRegisteringSystem
+21.11.2026 09:28:23 [Server Notification]     Mod 'VSCreativeMod.dll' (creative):
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.Core
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.WorldEdit.WorldEdit
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenBlockLayersFlat
+21.11.2026 09:28:23 [Server Notification]         Vintagestory.ServerMods.GenLightCreative
+21.11.2026 09:28:23 [Server Notification]     Mod 'EmbalmedEats_v1.2.0.zip' (embalmedeats):
+21.11.2026 09:28:23 [Server Notification]         EmbalmedEats.EmbalmedEatsModSystem
+21.11.2026 09:28:23 [Server Event] 26 traits loaded from 1 files
+21.11.2026 09:28:23 [Server Event] 6 classes loaded from 1 files
+21.11.2026 09:28:25 [Server Debug] Loading leaf block decay system
+21.11.2026 09:28:25 [Server Debug] Finished loading leaf block decay system
+21.11.2026 09:28:25 [Server Debug] Block simulation loaded blocks
+21.11.2026 09:28:25 [Server Debug] Block simulation loaded items
+21.11.2026 09:28:25 [Server Notification] Server map set
+21.11.2026 09:28:25 [Server Debug] Unique crafting ingredients count: 2426
+21.11.2026 09:28:25 [Server Notification] Entering runphase GameReady
+21.11.2026 09:28:25 [Server Notification] Entering runphase WorldReady
+21.11.2026 09:28:25 [Server Event] Starting world generators...
+21.11.2026 09:28:25 [Server Debug] Dungeon TileGenerator-big66-blastfurnace-main Setting RequireClosed to c-ul-ste,c-ur-smy,c-ul-wop,s-lr-wop,m-ene,m-smy,c-ul-gec,c-dl-smy,s-lr-smy,s-ud-smy,66gm,s-lr-ste,s-ud-ste,s-ud-wop,inc-dr-ste,m-wop,c-ul-smy,inc-dl-smy,inc-ur-ste,inc-dl-wop,m-ste,inc-dr-smy,,66gc-rp-lw,66gs-lp-rw,66gc-lp-lw,66gs-rp-lw,66gc-rp-rw,66gs-lp-lw,epstr-ud-ene,epstd-lr-ene,66gs-rp-rw,66gc-lp-rw,lpstd-lr-ene,lpstr-ud-ene,lpctr-ul-ene,lpctd-ul-ene,rpstd-lr-ene,rpstr-ud-ene,rpctr-ul-ene,rpctd-ul-ene
+21.11.2026 09:28:27 [Server Debug] Dungeon TileGenerator-big66-blastfurnace-main Setting RequireClosed to c-ul-ste,c-ur-smy,c-ul-wop,m-ene,m-smy,s-lr-wop,c-ul-gec,s-lr-smy,s-ud-smy,66gm,s-lr-ste,s-ud-wop,m-wop,s-ud-ste,inc-dl-smy,inc-dl-wop,m-ste,c-ul-smy,inc-dr-smy,,66gc-rp-lw,66gc-lp-lw,66gs-rp-lw,66gc-rp-rw,66gs-lp-lw,epstr-ud-ene,epstd-lr-ene,lpstd-lr-ene,lpstr-ud-ene,lpctr-ul-ene,lpctd-ul-ene,rpstd-lr-ene,rpstr-ud-ene,rpctr-ul-ene,rpctd-ul-ene
+21.11.2026 09:28:28 [Server Notification] Reloaded 35 tree generators
+21.11.2026 09:28:28 [Server Event] Loading 7x7x8 spawn chunks...
+21.11.2026 09:28:28 [Server Event] 0% (49 in queue)
+21.11.2026 09:28:31 [Server Event] 0% (49 in queue)
+21.11.2026 09:28:32 [Server Event] 0% (81 in queue)
+21.11.2026 09:28:34 [Server Event] 0% (138 in queue)
+21.11.2026 09:28:36 [Server Event] 0% (175 in queue)
+21.11.2026 09:28:37 [Server Event] Begin game ticking...
+21.11.2026 09:28:37 [Server Notification] Entering runphase RunGame
+21.11.2026 09:28:37 [Server Notification] Starting server threads
+21.11.2026 09:28:37 [Server Event] Dedicated Server now running on Port 42420 and all ips!
+21.11.2026 09:28:37 [Server Notification] Please be aware that as of 1.20, servers default configurations have changed - servers no longer register themselves to the public servers list and are invite-only (whitelisted) out of the box. If you desire so, you can enable server advertising with '/serverconfig advertise on' and disable the whitelist mode with '/serverconfig whitelistmode off'
+21.11.2026 09:28:47 [Server Warning] Server overloaded. A tick took 697ms to complete.
+21.11.2026 09:28:48 [Server Notification] Handling Console Command /embalmedeats selftest
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] Vintage Doctor fix embalmedeats:default (ToxicityPerItem): Put ToxicityPerItem back to its default (0.0 → 1.0). The old settings file was kept as /tmp/embalmedeats-selftest/2026-11-21_09-28-48/embalmedeats-4.json.
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: core patches applied
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: mod items loaded
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: food detection
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: preserving stops rotting
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: preserved food gives no nutrition but stays edible
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: names, tooltips and lang
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: preserved and fresh food don't stack together
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: wax and resin recipes generated
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: wax recipe makes a preserved copy of the same food
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: preserved food refused by recipes
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: formaldehyde barrel soak
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: salt & lime barrel cure
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: barrel needs enough agent
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: formaldehyde and curing salt are craftable
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: meal containers preserved through their contents
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: shelves accept preserved food
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: toxicity escalates from vomiting to lethal
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: help command lists every command
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: handbook: preserved items open the guide
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: ground storage for preserved food
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: creative tabs, one per method
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: creative lists: players get exactly the server's
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: server-side handbook calls are safe
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: check-up cards
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: settings that make no sense are found
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: fixes
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: cards about one item
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: its page
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: the player's game against the server
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: words for every reason and part of the mod
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: its JSON file
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST ok: /embalmedeats check
+21.11.2026 09:28:48 [Server Notification] [Embalmed Eats] SELFTEST PASS (32/32)
+21.11.2026 09:28:48 [Server Notification] SELFTEST ok: core patches applied
+SELFTEST ok: mod items loaded
+SELFTEST ok: food detection
+SELFTEST ok: preserving stops rotting
+SELFTEST ok: preserved food gives no nutrition but stays edible
+SELFTEST ok: names, tooltips and lang
+SELFTEST ok: preserved and fresh food don't stack together
+SELFTEST ok: wax and resin recipes generated
+SELFTEST ok: wax recipe makes a preserved copy of the same food
+SELFTEST ok: preserved food refused by recipes
+SELFTEST ok: formaldehyde barrel soak
+SELFTEST ok: salt & lime barrel cure
+SELFTEST ok: barrel needs enough agent
+SELFTEST ok: formaldehyde and curing salt are craftable
+SELFTEST ok: meal containers preserved through their contents
+SELFTEST ok: shelves accept preserved food
+SELFTEST ok: toxicity escalates from vomiting to lethal
+SELFTEST ok: help command lists every command
+SELFTEST ok: handbook: preserved items open the guide
+SELFTEST ok: ground storage for preserved food
+SELFTEST ok: creative tabs, one per method
+SELFTEST ok: creative lists: players get exactly the server's
+SELFTEST ok: server-side handbook calls are safe
+SELFTEST ok: Vintage Doctor: check-up cards
+SELFTEST ok: Vintage Doctor: settings that make no sense are found
+SELFTEST ok: Vintage Doctor: fixes
+SELFTEST ok: Vintage Doctor: cards about one item
+SELFTEST ok: Vintage Doctor: its page
+SELFTEST ok: Vintage Doctor: the player's game against the server
+SELFTEST ok: Vintage Doctor: words for every reason and part of the mod
+SELFTEST ok: Vintage Doctor: its JSON file
+SELFTEST ok: /embalmedeats check
+SELFTEST PASS (32/32)
+21.11.2026 09:28:48 [Server Warning] Server overloaded. A tick took 602ms to complete.
+21.11.2026 09:28:56 [Server Notification] Handling Console Command /embalmedeats help
+21.11.2026 09:28:56 [Server Notification] Embalmed Eats commands:
+/embalmedeats help - Show this list
+/embalmedeats preserve [wax|resin|formaldehyde|saltcure] - Preserve the food in your hand straight away (method: wax, resin, formaldehyde or saltcure)
+/embalmedeats unpreserve - Make the preserved food in your hand normal again
+/embalmedeats toxicity [player] - Show how poisoned you (or another player) are from eating preserved food
+/embalmedeats cure [player] - Clear the poisoning
+/embalmedeats info - Show how many foods the mod found and what it patched
+/embalmedeats check - Check whether the mod is set up properly (what Vintage Doctor shows)
+/embalmedeats fix <name> [argument] - Do one of the fixes the check offers
+/embalmedeats selftest - Run the mod's built-in checks
+21.11.2026 09:29:00 [Server Notification] Handling Console Command /embalmedeats 
+21.11.2026 09:29:00 [Server Notification] Embalmed Eats commands:
+/embalmedeats help - Show this list
+/embalmedeats preserve [wax|resin|formaldehyde|saltcure] - Preserve the food in your hand straight away (method: wax, resin, formaldehyde or saltcure)
+/embalmedeats unpreserve - Make the preserved food in your hand normal again
+/embalmedeats toxicity [player] - Show how poisoned you (or another player) are from eating preserved food
+/embalmedeats cure [player] - Clear the poisoning
+/embalmedeats info - Show how many foods the mod found and what it patched
+/embalmedeats check - Check whether the mod is set up properly (what Vintage Doctor shows)
+/embalmedeats fix <name> [argument] - Do one of the fixes the check offers
+/embalmedeats selftest - Run the mod's built-in checks
+21.11.2026 09:29:04 [Server Notification] Handling Console Command /embalmedeats check
+21.11.2026 09:29:04 [Server Notification] ✓ All 48 of its changes to the game are in place
+    They are what stop preserved food rotting, feeding you and going into recipes, and what let it go on shelves, in display cases and on the ground.
+✓ It can preserve 667 kinds of food (0 of them from other mods)
+    The game: 667
+    57 foods that normally can't go on the ground can once preserved
+✓ All 4 switched-on preserving methods work
+    Wax dipping: 1 Beeswax per food in the crafting grid (667 recipes)
+    Resin lacquer: 1 Resin per food in the crafting grid (667 recipes)
+    Formaldehyde: 0.25 L of solution per food, sealed for 48 hours
+    Salt and lime cure: 1 curing salt per food, sealed for 120 hours
+With Vintage Doctor installed, /doctor embalmedeats shows these with buttons that fix them.
+21.11.2026 09:29:08 [Server Notification] Handling Console Command /stop 
+21.11.2026 09:29:08 [Server Notification] Message to all in group 0: Console Admin commenced a server shutdown
+21.11.2026 09:29:08 [Server Event] Console Admin shuts down server.
+21.11.2026 09:29:08 [Server Notification] Server stop requested, begin shutdown sequence. Stop reason: Shutdown via server command
+21.11.2026 09:29:08 [Server Notification] Server ticking has been suspended
+21.11.2026 09:29:08 [Server Notification] Entering runphase Shutdown
+21.11.2026 09:29:08 [Server Event] Mods and systems notified, now saving everything...
+21.11.2026 09:29:08 [Server Event] Saved player world data...
+21.11.2026 09:29:08 [Server Event] Saved map regions...
+21.11.2026 09:29:08 [Server Event] Saved map chunks...
+21.11.2026 09:29:08 [Server Event] Saved loaded chunks...
+21.11.2026 09:29:08 [Server Event] Saved generating chunks...
+21.11.2026 09:29:08 [Server Event] Saved savegamedata...2
+21.11.2026 09:29:08 [Server Event] World saved! Saved 8 chunks, 1 mapchunks, 16 mapregions.
+21.11.2026 09:29:08 [Server Event] Shutting down 10 server threads... 
+21.11.2026 09:29:08 [Server Event] Killed console thread
+21.11.2026 09:29:09 [Server Event] All threads gracefully shut down
+21.11.2026 09:29:09 [Server Event] Doing last tick...
+21.11.2026 09:29:09 [Server Event] Stopped the server!
+21.11.2026 09:29:09 [Server Notification] Shut down command executed

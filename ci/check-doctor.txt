@@ -1,0 +1,11 @@
+21.11.2026 09:30:03 [Server Notification] Handling Console Command /embalmedeats check
+21.11.2026 09:30:03 [Server Notification] ✓ All 48 of its changes to the game are in place
+    They are what stop preserved food rotting, feeding you and going into recipes, and what let it go on shelves, in display cases and on the ground.
+✓ It can preserve 667 kinds of food (0 of them from other mods)
+    The game: 667
+    57 foods that normally can't go on the ground can once preserved
+✓ All 4 switched-on preserving methods work
+    Wax dipping: 1 Beeswax per food in the crafting grid (667 recipes)
+    Resin lacquer: 1 Resin per food in the crafting grid (667 recipes)
+    Formaldehyde: 0.25 L of solution per food, sealed for 48 hours
+    Salt and lime cure: 1 curing salt per food, sealed for 120 hours
