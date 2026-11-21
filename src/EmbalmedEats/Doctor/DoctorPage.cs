@@ -69,7 +69,11 @@ public static class DoctorPage
         page.Note(T(lang, "page-intro", version));
 
         // The same cards as on the check-up, with their buttons
-        foreach (Finding f in ModChecks.Server(sapi, lang, clientFacts)) page.Card(f);
+        foreach (Finding f in ModChecks.Server(sapi, lang, clientFacts))
+        {
+            if (f.Link == DoctorBridge.TopicId && string.IsNullOrEmpty(f.LinkArgument)) f.Link = null; // we're on that page
+            page.Card(f);
+        }
         if (heldCode != null && Find(world, heldCode) is CollectibleObject held)
         {
             page.Text(PageLines.OpenToken(DoctorBridge.TopicId, "item " + held.Code, T(lang, "link-held", ModChecks.ThingName(held))));
@@ -146,7 +150,7 @@ public static class DoctorPage
         {
             int made = PatchUtil.CountPatched(feature);
             int failed = PatchUtil.Failures.Count(f => ModChecks.FeatureOf(f) == feature);
-            string line = T(lang, "page-feature", T(lang, "feature-" + feature), made);
+            string line = T(lang, "page-feature", T(lang, "part-" + feature), made);
             if (failed > 0) page.Warn(line + " " + T(lang, "page-feature-failed", failed));
             else page.Text(line);
         }

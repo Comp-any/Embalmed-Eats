@@ -26,6 +26,14 @@ public static class SelfTestDoctor
 
     public static void Run(ICoreServerAPI sapi, Action<string, Func<string?>> check)
     {
+        // The fixes below change the settings file; their copies of it go to a temporary folder, not ModData
+        DoctorFixes.BackupFolderOverride = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "embalmedeats-selftest");
+        try { RunChecks(sapi, check); }
+        finally { DoctorFixes.BackupFolderOverride = null; }
+    }
+
+    static void RunChecks(ICoreServerAPI sapi, Action<string, Func<string?>> check)
+    {
         var world = sapi.World;
         Item? meat = world.GetItem(new AssetLocation("game:redmeat-raw"));
 
@@ -78,7 +86,7 @@ public static class SelfTestDoctor
             var (result, failed) = DoctorFixes.Run(sapi, DoctorFixes.Id(DoctorFixes.Default), "toxicitydecaypergamehour", "en");
             if (failed) return "default: " + result;
             if (Math.Abs(Preservation.Config.ToxicityDecayPerGameHour - new EmbalmedEatsConfig().ToxicityDecayPerGameHour) > 0.0001f) return "default didn't put the value back";
-            if (!result.Contains("ModData/embalmedeats/backups/")) return "the old file wasn't kept: " + result;
+            if (!result.Contains("embalmedeats-selftest")) return "the old file wasn't kept: " + result;
 
             Preservation.Config.AlwaysPreservable = new[] { "game:nosuchfood-*", "nosuchmod:thing", "game:redmeat-*" };
             (result, failed) = DoctorFixes.Run(sapi, DoctorFixes.DropUnmatched, "", "en");
@@ -177,6 +185,10 @@ public static class SelfTestDoctor
             foreach (string feature in ModChecks.Features.Append("other"))
             {
                 if (!Lang.HasTranslation("embalmedeats:doctor-feature-" + feature)) return "no text for feature " + feature;
+            }
+            foreach (string feature in ModChecks.Features)
+            {
+                if (!Lang.HasTranslation("embalmedeats:doctor-part-" + feature)) return "no text for part " + feature;
             }
             if (ModChecks.FeatureOf("display: BlockEntityDisplayCase.TryPut not found") != "display") return "feature of a failure wrong";
             if (ModChecks.FeatureOf("Method not found: X.Y") != "other") return "unknown feature not 'other'";

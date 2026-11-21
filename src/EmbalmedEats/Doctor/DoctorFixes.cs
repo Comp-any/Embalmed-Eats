@@ -26,6 +26,9 @@ public static class DoctorFixes
 
     public static readonly string[] All = { Default, MethodsOn, DropUnmatched, Cure };
 
+    /// <summary>For the self-test: copies go to this folder instead of ModData, so running it on a real server leaves nothing behind there.</summary>
+    public static string? BackupFolderOverride;
+
     public static string Id(string name) => EmbalmedEatsModSystem.ModId + ":" + name;
 
     public static string Name(string id) => id.StartsWith(EmbalmedEatsModSystem.ModId + ":", StringComparison.Ordinal) ? id.Substring(EmbalmedEatsModSystem.ModId.Length + 1) : id;
@@ -134,10 +137,13 @@ public static class DoctorFixes
         string source = Path.Combine(GamePaths.ModConfig, file);
         if (!File.Exists(source)) return null;
         string stamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-        string folder = api.GetOrCreateDataPath(Path.Combine("ModData", EmbalmedEatsModSystem.ModId, "backups", stamp));
+        string folder = BackupFolderOverride != null
+            ? Directory.CreateDirectory(Path.Combine(BackupFolderOverride, stamp)).FullName
+            : api.GetOrCreateDataPath(Path.Combine("ModData", EmbalmedEatsModSystem.ModId, "backups", stamp));
         string target = Path.Combine(folder, file);
         for (int i = 2; File.Exists(target); i++) target = Path.Combine(folder, Path.GetFileNameWithoutExtension(file) + "-" + i + Path.GetExtension(file));
         File.Copy(source, target);
+        if (BackupFolderOverride != null) return target;
         return Path.Combine("ModData", EmbalmedEatsModSystem.ModId, "backups", stamp, Path.GetFileName(target)).Replace('\\', '/');
     }
 }
