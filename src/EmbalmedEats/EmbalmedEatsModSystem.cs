@@ -172,9 +172,16 @@ public class EmbalmedEatsModSystem : ModSystem
         Step(api, "add creative tabs", () =>
         {
             int n = CreativeTabs.AddToCreativeInventory(api);
-            if (n > 0) api.Logger.Notification("[Embalmed Eats] Creative tabs: {0} foods added.", n);
+            CreativeAddedHere += n;
+            if (n > 0) api.Logger.Notification("[Embalmed Eats] Creative tabs: {0} foods added ({1}).", n, api.Side);
         });
     }
+
+    /// <summary>
+    /// How many foods got their creative tabs on this side (for Vintage Doctor's comparison). On a player's game this
+    /// should stay 0: the lists come with the server's items.
+    /// </summary>
+    public int CreativeAddedHere;
 
     static void Step(ICoreAPI api, string what, Action action)
     {

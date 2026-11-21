@@ -2,6 +2,11 @@
 
 Each version's section becomes its GitHub release notes, and from there its changelog on the Mod DB.
 
+## 1.2.1
+
+- Fixed: with Vintage Doctor, single player (and multiplayer) always showed the problem "Taking Embalmed Eats items from the creative tabs may give you the wrong item". The tabs were fine: the check read the items of your game's lists before the game had looked them up, so they never matched the server's. It now compares each tab the way the creative inventory shows it.
+- If the tabs really do differ, the card now says how: which foods are in the tabs on only one side, which tabs have a different number of entries, and whether your game had to make the tabs itself.
+
 ## 1.2.0
 
 - **Works with Vintage Doctor.** With Vintage Doctor installed, its check-up says whether Embalmed Eats set itself up properly: its changes to the game, the food it found, whether each of the four methods works (the wax and resin items are in the game, formaldehyde solution and curing salt can be made, the amounts fit in a barrel or a stack), and settings that don't do what was most likely meant (poisoning that never wears off, stages that can't be reached, mistyped entries in the food lists, and more). Many cards have a button that fixes it.

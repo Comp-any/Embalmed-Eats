@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using EmbalmedEats.Config;
 using EmbalmedEats.Core;
+using EmbalmedEats.Decoration;
 using EmbalmedEats.Doctor;
 using EmbalmedEats.Toxicity;
 using Newtonsoft.Json;
@@ -174,6 +175,49 @@ public static class SelfTestDoctor
             if (results["embalmedeats:sync"] == null) return "the facts sent along weren't compared";
             if (!server["creative"]!.ToString().StartsWith(CreativeCount(world) + ":")) return "the creative fingerprint doesn't count the foods with tabs";
             return Raw(differ);
+        });
+
+        check("Vintage Doctor: the creative tabs compare the same after the trip to a player's game", () =>
+        {
+            // What a player's game gets: each list's tabs, and each stack as its bytes (item number, attributes) and
+            // JSON, not yet looked up (JsonItemStack.FromBytes). In 1.2.0 that alone made every list look different.
+            int unlooked = 0;
+            CreativeTabAndStackList[]? Received(CollectibleObject coll) => coll.CreativeInventoryStacks?.Select(list => list == null ? null! : new CreativeTabAndStackList
+            {
+                Tabs = list.Tabs?.ToArray()!,
+                Stacks = list.Stacks?.Select(j =>
+                {
+                    if (j == null) return null!;
+                    var copy = new JsonItemStack
+                    {
+                        Type = j.Type,
+                        Code = new AssetLocation(j.Code.ToShortString()),
+                        StackSize = j.StackSize,
+                        Attributes = j.Attributes == null ? null : new JsonObject(JToken.Parse(j.Attributes.ToString())),
+                        ResolvedItemstack = j.ResolvedItemstack == null ? null : new ItemStack(j.ResolvedItemstack.ToBytes())
+                    };
+                    if (copy.ResolvedItemstack != null && copy.ResolvedItemstack.Collectible == null) unlooked++;
+                    return copy;
+                }).ToArray()!
+            }).ToArray();
+
+            var here = ClientFacts.CreativeLists(world);
+            var there = ClientFacts.CreativeLists(world, Received);
+            if (here.Foods.Count == 0) return "no food has the tabs";
+            if (unlooked == 0) return "the copy didn't reproduce stacks that aren't looked up yet";
+            if (there.Unresolved != 0) return there.Unresolved + " stacks couldn't be identified";
+            if (here.Fingerprint != there.Fingerprint)
+            {
+                string tab = here.Tabs.Keys.FirstOrDefault(t => !there.Tabs.TryGetValue(t, out var v) || v != here.Tabs[t]) ?? "?";
+                return "differ after the trip (first tab: " + tab + ")";
+            }
+            // And a real difference is still found, and said where
+            var changed = ClientFacts.Build(world, "1.0", true);
+            changed["tabs"]![CreativeTabs.TabFor(PreservationMethods.Wax)] = "1:x";
+            changed["creative"] = "1:x";
+            var lines = ClientFacts.CreativeDifferences("en", ClientFacts.Build(world, "1.0", true), changed);
+            if (!lines.Any(l => l.Contains(CreativeTabs.TabFor(PreservationMethods.Wax)))) return "a tab that differs isn't named: " + string.Join(" / ", lines);
+            return null;
         });
 
         check("Vintage Doctor: words for every reason and part of the mod", () =>

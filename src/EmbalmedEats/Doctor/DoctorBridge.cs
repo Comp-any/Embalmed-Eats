@@ -134,7 +134,8 @@ public static class DoctorBridge
     {
         if (data is not ITreeAttribute tree || tree["facts"] is not ITreeAttribute facts) return;
         bool got = capi.IsSinglePlayer || EmbalmedEatsModSystem.ConfigReceived;
-        facts.SetBytes(EmbalmedEatsModSystem.ModId, ClientFacts.ToBytes(ClientFacts.Build(capi.World, version, got)));
+        int addedHere = capi.ModLoader.GetModSystem<EmbalmedEatsModSystem>()?.CreativeAddedHere ?? 0;
+        facts.SetBytes(EmbalmedEatsModSystem.ModId, ClientFacts.ToBytes(ClientFacts.Build(capi.World, version, got, addedHere)));
     }
 
     static void ClientCollect(ICoreClientAPI capi, IAttribute data)
