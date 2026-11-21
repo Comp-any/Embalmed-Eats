@@ -78,7 +78,7 @@ public static class ClientFacts
     /// A stack that isn't resolved on this side is taken from its code and attributes, so that alone isn't a difference.
     /// </summary>
     /// <param name="listsOf">Whose lists to read (for the self-test's copy of what a player's game receives); each food's own by default.</param>
-    public static Creative CreativeLists(IWorldAccessor world, Func<CollectibleObject, CreativeTabAndStackList[]?>? listsOf = null)
+    public static Creative CreativeLists(IWorldAccessor world, System.Func<CollectibleObject, CreativeTabAndStackList[]?>? listsOf = null)
     {
         listsOf ??= c => c.CreativeInventoryStacks;
         var result = new Creative();
