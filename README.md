@@ -68,7 +68,13 @@ Embalmed Eats hands Vintage Doctor its own checks over the doctor's event bus, s
 
 Without the doctor, `/embalmedeats check` shows the same checks as text.
 
+The CI's server test with the doctor installs the newest Vintage Doctor release when the organisation secret `DOCTOR_TOKEN` can read its repository, and otherwise the copy in `tools/vendor/vintagedoctor/` (`.github/scripts/get-doctor.sh`; the results' `doctor-version.txt` says which).
+
 Fixes that change the settings copy the old file to `ModData/embalmedeats/backups/<date and time>/` first. A settings file that can't be read is copied there too before the defaults replace it.
+
+## Creative tabs on players' games
+
+The server hands out creative items by their place in its own lists, so a player's game must show exactly the server's lists. Embalmed Eats copies the tabs of the foods it preserves as they arrive from the server (before any other mod runs on the player's game) and puts them back if another mod changes them there (after every other mod, when the textures are loaded and when the world is ready). The log says so when it happens, and Vintage Doctor's comparison names the tabs.
 
 ## Config
 

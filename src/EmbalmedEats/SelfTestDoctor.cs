@@ -170,6 +170,21 @@ public static class SelfTestDoctor
             if (differ.First(f => f.Key == "sync-creative").Level != Level.Problem) return "different creative lists aren't a problem";
             if (differ.First(f => f.Key == "sync-settings").Title != Lang.Get("embalmedeats:doctor-sync-settings-missing")) return "settings that never arrived not told apart";
 
+            // Lists another mod changed on the player's game and Embalmed Eats put back: they agree, and the card says so
+            var putBack = new CreativeTabGuard.Restored { Lists = 20 };
+            putBack.Added.Add("vintagecreation");
+            JObject mended = ClientFacts.Build(world, "1.0", true, 0, putBack);
+            if (mended["putBack"]?.ToString() != "20") return "what was put back isn't in the facts";
+            var told = new List<Finding>();
+            ClientFacts.Compare("en", server, mended, told);
+            string Cards() => string.Join(" / ", told.Select(f => f.Key + "=" + f.Level));
+            if (!told.Any(f => f.Key == "sync" && f.Level == Level.Ok)) return "lists that were put back don't agree: " + Cards();
+            Finding? putBackCard = told.FirstOrDefault(f => f.Key == "sync-putback");
+            if (putBackCard == null || putBackCard.Level != Level.Info) return "lists that were put back aren't told: " + Cards();
+            string putBackText = Finding.PlainText(new[] { putBackCard }, "en");
+            if (!putBackText.Contains("vintagecreation")) return "the card doesn't name the tab that was added: " + putBackText;
+            if (Raw(told) is string missing) return missing;
+
             // Over the event bus, as the doctor sends what the player's game said
             ITreeAttribute results = Collect(sapi, null, ClientFacts.ToBytes(server));
             if (results["embalmedeats:sync"] == null) return "the facts sent along weren't compared";

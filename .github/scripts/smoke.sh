@@ -5,8 +5,10 @@
 # mentions the mod.
 #
 #   smoke.sh          the mod on its own
-#   smoke.sh doctor   with Vintage Doctor installed too (tools/vendor/vintagedoctor): also opens the doctor's
-#                     pages from the console and checks Embalmed Eats' cards, page and a fix are on them
+#   smoke.sh doctor   with Vintage Doctor installed too: also opens the doctor's pages from the console and checks
+#                     Embalmed Eats' cards, page and a fix are on them. The doctor zip comes from get-doctor.sh: the
+#                     newest release with the DOCTOR_TOKEN secret, else the copy in tools/vendor/vintagedoctor
+#                     (ci/doctor-version.txt says which)
 set -uo pipefail
 
 mode=${1:-plain}
@@ -26,8 +28,8 @@ LOG=$ROOT/ci/server-stdout$suffix.log
 mkdir -p "$DATA/Mods" "ci/server-logs$suffix"
 cp "$zip" "$DATA/Mods/"
 if [ "$mode" = doctor ]; then
-  doctor_zip=$(ls tools/vendor/vintagedoctor/*.zip 2>/dev/null | head -1)
-  [ -n "$doctor_zip" ] || { echo "No Vintage Doctor zip in tools/vendor/vintagedoctor"; exit 1; }
+  doctor_zip=$(bash .github/scripts/get-doctor.sh)
+  [ -n "$doctor_zip" ] || { echo "No Vintage Doctor zip (no DOCTOR_TOKEN and nothing in tools/vendor/vintagedoctor)"; exit 1; }
   cp "$doctor_zip" "$DATA/Mods/"
   mkdir -p ci/doctor
 fi

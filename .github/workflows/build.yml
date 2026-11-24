@@ -72,6 +72,8 @@ jobs:
         id: doctor
         if: steps.build.outcome == 'success'
         continue-on-error: true
+        env:
+          DOCTOR_TOKEN: ${{ secrets.DOCTOR_TOKEN }}
         run: bash .github/scripts/smoke.sh doctor
 
       - name: Upload mod zip

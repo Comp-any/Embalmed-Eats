@@ -75,6 +75,15 @@
       "title": "Embalmed Eats' part of this page failed",
       "explain": "A bug in Embalmed Eats' checks for Vintage Doctor. The rest of the page isn't affected.",
       "advice": "A bug report helps: /doctor bugreport embalmedeats"
+    },
+    {
+      "id": "creative-put-back",
+      "match": "[Embalmed Eats] Another mod changed the creative tabs of",
+      "side": "client",
+      "level": "info",
+      "title": "Another mod changed Embalmed Eats' creative lists on your game only, and Embalmed Eats put them back",
+      "explain": "The server hands out creative items by their place in its own lists, so lists that differ on your game give the wrong item. Embalmed Eats keeps the lists of the foods it preserves as the server sent them.",
+      "advice": "Nothing to do for Embalmed Eats. The line names the tabs that were added or taken away, which usually says which mod it was: update that mod."
     }
   ]
 }

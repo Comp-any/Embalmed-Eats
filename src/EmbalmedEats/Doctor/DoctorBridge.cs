@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using EmbalmedEats.Core;
+using EmbalmedEats.Decoration;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
@@ -135,7 +136,8 @@ public static class DoctorBridge
         if (data is not ITreeAttribute tree || tree["facts"] is not ITreeAttribute facts) return;
         bool got = capi.IsSinglePlayer || EmbalmedEatsModSystem.ConfigReceived;
         int addedHere = capi.ModLoader.GetModSystem<EmbalmedEatsModSystem>()?.CreativeAddedHere ?? 0;
-        facts.SetBytes(EmbalmedEatsModSystem.ModId, ClientFacts.ToBytes(ClientFacts.Build(capi.World, version, got, addedHere)));
+        CreativeTabGuard.Restored? putBack = capi.ModLoader.GetModSystem<CreativeTabCopySystem>()?.Total;
+        facts.SetBytes(EmbalmedEatsModSystem.ModId, ClientFacts.ToBytes(ClientFacts.Build(capi.World, version, got, addedHere, putBack)));
     }
 
     static void ClientCollect(ICoreClientAPI capi, IAttribute data)

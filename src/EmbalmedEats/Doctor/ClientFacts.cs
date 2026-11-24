@@ -28,10 +28,11 @@ public static class ClientFacts
 
     /// <summary>This side's facts: the mod's version, whether the server's settings arrived, and fingerprints of what matters.</summary>
     /// <param name="addedHere">How many foods this side gave the creative tabs itself (a player's game should need none: they come with the server's items).</param>
-    public static JObject Build(IWorldAccessor world, string version, bool settingsReceived, int addedHere = 0)
+    /// <param name="putBack">What <see cref="CreativeTabGuard"/> put back on a player's game after another mod changed it.</param>
+    public static JObject Build(IWorldAccessor world, string version, bool settingsReceived, int addedHere = 0, CreativeTabGuard.Restored? putBack = null)
     {
         Creative creative = CreativeLists(world);
-        return new JObject
+        var facts = new JObject
         {
             ["fv"] = Format,
             ["v"] = version,
@@ -45,6 +46,13 @@ public static class ClientFacts
             ["foods"] = world.Collectibles.Count(c => c?.Code != null && Preservation.IsPreservableCollectible(c)),
             ["ground"] = world.Items.Count(i => i?.Code != null && GroundStorageSupport.IsAddedFor(i))
         };
+        if (putBack != null && putBack.Lists > 0)
+        {
+            facts["putBack"] = putBack.Lists;
+            facts["putBackAdded"] = new JArray(putBack.Added);
+            facts["putBackRemoved"] = new JArray(putBack.Removed);
+        }
+        return facts;
     }
 
     public static byte[] ToBytes(JObject facts) => Encoding.UTF8.GetBytes(facts.ToString(Formatting.None));
@@ -195,6 +203,17 @@ public static class ClientFacts
         {
             list.Add(new Finding("sync", Level.Ok, DoctorText.T(lang, "sync-ok"))
                 .Detail(DoctorText.T(lang, "sync-ok-detail", S(server, "foods"), S(server, "creative").Split(':')[0])));
+        }
+
+        // Another mod changed the lists on the player's game only, and CreativeTabGuard put them back (so they agree now)
+        int putBack = player["putBack"]?.Type == JTokenType.Integer ? (int)player["putBack"]! : 0;
+        if (putBack > 0)
+        {
+            string Tabs(string key) => player[key] is JArray a && a.Count > 0 ? string.Join(", ", a.Select(t => t.ToString())) : "";
+            var f = new Finding("sync-putback", Level.Info, DoctorText.T(lang, "sync-putback", putBack));
+            if (Tabs("putBackAdded") is { Length: > 0 } added) f.Detail(DoctorText.T(lang, "sync-putback-added", added));
+            if (Tabs("putBackRemoved") is { Length: > 0 } removed) f.Detail(DoctorText.T(lang, "sync-putback-removed", removed));
+            list.Add(f.WithAdvice(DoctorText.T(lang, "sync-putback-advice")));
         }
     }
 

@@ -388,6 +388,48 @@ public static class SelfTest
             return null;
         });
 
+        Check("creative lists: what another mod changes on a player's game only is put back", () =>
+        {
+            // A stand-in for the meat as a player's game receives it: the same lists, as their own objects
+            var food = new Item { Code = meat.Code.Clone() };
+            food.CreativeInventoryStacks = meat.CreativeInventoryStacks!.Select(l => new CreativeTabAndStackList { Tabs = l.Tabs?.ToArray()!, Stacks = l.Stacks }).ToArray();
+            string Shown() => Doctor.ClientFacts.CreativeLists(world, c => c == meat ? food.CreativeInventoryStacks : c.CreativeInventoryStacks).Fingerprint;
+            string asSent = Shown();
+
+            CreativeTabGuard.Saved saved = CreativeTabGuard.Copy(new CollectibleObject[] { food, new Item { Code = new AssetLocation("game", "nofood") } });
+            if (saved.Count != food.CreativeInventoryStacks.Length || saved.Foods != 1) return $"copied {saved.Count} lists of {saved.Foods} foods";
+
+            // What Vintage Creation before 0.44.1 did on players' games: its tab on every list of its things
+            foreach (var list in food.CreativeInventoryStacks)
+            {
+                if (!list.Tabs.Contains("othermod")) list.Tabs = list.Tabs.Append("othermod").ToArray();
+            }
+            var first = food.CreativeInventoryStacks[0];
+            string firstTab = first.Tabs[0];
+            first.Tabs = first.Tabs.Skip(1).ToArray(); // and one taken away
+            // A list a mod adds on the player's game isn't the server's: left alone
+            var added = new CreativeTabAndStackList { Tabs = new[] { "othermod" }, Stacks = Array.Empty<JsonItemStack>() };
+            food.CreativeInventoryStacks = food.CreativeInventoryStacks.Append(added).ToArray();
+            if (Shown() == asSent) return "the change didn't change what the tabs show (the check proves nothing)";
+
+            CreativeTabGuard.Restored r = CreativeTabGuard.Restore(saved);
+            if (r.Lists != saved.Count) return $"put back {r.Lists} of {saved.Count} lists";
+            if (!r.Added.SetEquals(new[] { "othermod" })) return "added tabs reported as " + string.Join(",", r.Added);
+            if (!r.Removed.SetEquals(new[] { firstTab })) return "taken-away tabs reported as " + string.Join(",", r.Removed);
+            if (added.Tabs.Length != 1 || added.Tabs[0] != "othermod") return "a list the player's game added was changed";
+            food.CreativeInventoryStacks = food.CreativeInventoryStacks.Take(food.CreativeInventoryStacks.Length - 1).ToArray();
+            if (Shown() != asSent) return "after putting back, the tabs still show something other than the server's";
+            if (CreativeTabGuard.Restore(saved).Lists != 0) return "a second pass put something back again";
+
+            // Copies before every other mod and puts back after them (checked against the mods loaded here)
+            var others = sapi.ModLoader.Mods.SelectMany(m => m.Systems ?? Enumerable.Empty<ModSystem>()).Where(s => s is not CreativeTabCopySystem and not CreativeTabRestoreSystem).Select(s => s.ExecuteOrder()).ToList();
+            if (others.Any(o => o <= CreativeTabGuard.CopyOrder)) return "a system runs before the copy: " + others.Min();
+            if (others.Any(o => o >= CreativeTabGuard.RestoreOrder)) return "a system runs after the putting back: " + others.Max();
+            if (new CreativeTabCopySystem().ShouldLoad(EnumAppSide.Server) || !new CreativeTabCopySystem().ShouldLoad(EnumAppSide.Client)) return "the copy should only run on players' games";
+            if (new CreativeTabRestoreSystem().ShouldLoad(EnumAppSide.Server)) return "the putting back should only run on players' games";
+            return null;
+        });
+
         Check("server-side handbook calls are safe", () =>
         {
             // Vanilla crock and cooking pot code calls this on the server with no client (this crashed a 1.1.0 test)

@@ -2,6 +2,11 @@
 
 Each version's section becomes its GitHub release notes, and from there its changelog on the Mod DB.
 
+## 1.2.2
+
+- Fixed: with Vintage Creation installed, taking items from the Vintage Creation creative tab could give you the wrong item. Vintage Creation added its tab to Embalmed Eats' preserved-food lists on your game but not on the server, so the tab had 25 entries on your game and 5 on the server (Vintage Doctor showed this as a problem). Embalmed Eats now keeps the creative tabs of the foods it preserves exactly as the server sent them, whatever another mod changes on your game. Vintage Creation 0.44.1 also stops doing it.
+- If another mod does change them, Vintage Doctor's comparison says which tabs it added or took away and that Embalmed Eats put them back.
+
 ## 1.2.1
 
 - Fixed: with Vintage Doctor, single player (and multiplayer) always showed the problem "Taking Embalmed Eats items from the creative tabs may give you the wrong item". The check could read your game's lists before the game had looked their items up, and then they never matched the server's. It now compares each tab the way the creative inventory shows it.
