@@ -15,19 +15,27 @@ namespace EmbalmedEats.Decoration;
 /// arrive from the server without it, because we add them after Vintage Creation runs there). Its tab then had 25
 /// entries on the player's game and 5 on the server.
 ///
-/// The lists arrive with the server's items before any mod's AssetsFinalize runs on the player's game.
-/// <see cref="CreativeTabCopySystem"/> copies the tabs of every list of each food that has one of ours, before any
-/// other mod; <see cref="CreativeTabRestoreSystem"/> puts back any that changed, after every other mod, and again when
-/// the block textures are loaded and when the world is ready. Only the tabs are put back, and only on lists that came
-/// from the server: lists a mod adds on the player's game are left alone (Vintage Doctor's comparison still reports them).
+/// When things happen on a player's game (read from the game's code, VintagestoryLib 1.22.7):
+/// - the server's blocks and items, with their creative lists, are loaded first (ClientSystemStartup.LoadBlockTypes);
+/// - then the block textures, and the BlockTexturesLoaded event;
+/// - mods' AssetsFinalize runs only when the level finalizes (SystemModHandler.OnLevelFinalize), then the
+///   LevelFinalize event;
+/// - the creative inventory gathers its tabs the first time it is opened (InventoryPlayerCreative.UpdateFromWorld).
+///
+/// So <see cref="CreativeTabCopySystem"/> copies the tabs of every list of each food that has one of ours in the first
+/// BlockTexturesLoaded handler (its system starts before any other mod's, so it registers first), and
+/// <see cref="CreativeTabRestoreSystem"/> puts back any that changed after every other mod's AssetsFinalize and again in
+/// the last LevelFinalize handler, before anyone can open the creative inventory. Only the tabs are put back, and only
+/// on lists that came from the server: lists a mod adds on the player's game are left alone (Vintage Doctor's
+/// comparison still reports them).
 /// </summary>
 public static class CreativeTabGuard
 {
-    /// <summary>Before every other mod's AssetsFinalize (most use 0 to 10).</summary>
+    /// <summary>Before every other mod (most use 0 to 10): the copy system's handlers are registered first.</summary>
     public const double CopyOrder = -1000;
 
-    /// <summary>After every other mod's AssetsFinalize.</summary>
-    public const double RestoreOrder = 1000;
+    /// <summary>After every other mod (the game's last system, DisableRecipeRegisteringSystem, uses 99999).</summary>
+    public const double RestoreOrder = 1_000_000;
 
     /// <summary>The tabs of every list of the foods that have one of ours, as they were when copied.</summary>
     public sealed class Saved
@@ -116,12 +124,16 @@ public class CreativeTabCopySystem : ModSystem
 
     public override void StartClientSide(ICoreClientAPI capi)
     {
-        capi.Event.BlockTexturesLoaded += () => PutBack(capi);
-        capi.Event.LevelFinalize += () => PutBack(capi);
+        // The first handler: the server's items are all here, and no other mod's handler has run yet
+        capi.Event.BlockTexturesLoaded += () => Copy(capi);
     }
 
-    public override void AssetsFinalize(ICoreAPI api)
+    /// <summary>In case the textures event didn't come first (it does in 1.22.7): still before every other mod.</summary>
+    public override void AssetsFinalize(ICoreAPI api) => Copy(api);
+
+    void Copy(ICoreAPI api)
     {
+        if (saved != null) return; // once: the textures event also comes when textures are reloaded
         try
         {
             saved = CreativeTabGuard.Copy(api.World.Collectibles);
@@ -156,12 +168,20 @@ public class CreativeTabCopySystem : ModSystem
     public override void Dispose() => saved = null;
 }
 
-/// <summary>Puts back the server's creative lists after every other mod's AssetsFinalize on a player's game.</summary>
+/// <summary>Puts back the server's creative lists on a player's game after every other mod: at the end of AssetsFinalize, and in the last LevelFinalize handler.</summary>
 public class CreativeTabRestoreSystem : ModSystem
 {
     public override bool ShouldLoad(EnumAppSide forSide) => forSide == EnumAppSide.Client;
 
     public override double ExecuteOrder() => CreativeTabGuard.RestoreOrder;
 
-    public override void AssetsFinalize(ICoreAPI api) => api.ModLoader.GetModSystem<CreativeTabCopySystem>()?.PutBack(api);
+    public override void StartClientSide(ICoreClientAPI capi)
+    {
+        // Registered after every other mod's handler, so it runs last
+        capi.Event.LevelFinalize += () => PutBack(capi);
+    }
+
+    public override void AssetsFinalize(ICoreAPI api) => PutBack(api);
+
+    static void PutBack(ICoreAPI api) => api.ModLoader.GetModSystem<CreativeTabCopySystem>()?.PutBack(api);
 }

@@ -74,7 +74,7 @@ Fixes that change the settings copy the old file to `ModData/embalmedeats/backup
 
 ## Creative tabs on players' games
 
-The server hands out creative items by their place in its own lists, so a player's game must show exactly the server's lists. Embalmed Eats copies the tabs of the foods it preserves as they arrive from the server (before any other mod runs on the player's game) and puts them back if another mod changes them there (after every other mod, when the textures are loaded and when the world is ready). The log says so when it happens, and Vintage Doctor's comparison names the tabs.
+The server hands out creative items by their place in its own lists, so a player's game must show exactly the server's lists. Embalmed Eats copies the tabs of the foods it preserves as they arrive from the server (before any other mod runs on the player's game) and puts them back if another mod changes them there (after every other mod, at the end of start-up and when the world is ready, before the creative inventory is first opened). The log says so when it happens, and Vintage Doctor's comparison names the tabs.
 
 ## Config
 

@@ -422,9 +422,12 @@ public static class SelfTest
             if (CreativeTabGuard.Restore(saved).Lists != 0) return "a second pass put something back again";
 
             // Copies before every other mod and puts back after them (checked against the mods loaded here)
-            var others = sapi.ModLoader.Mods.SelectMany(m => m.Systems ?? Enumerable.Empty<ModSystem>()).Where(s => s is not CreativeTabCopySystem and not CreativeTabRestoreSystem).Select(s => s.ExecuteOrder()).ToList();
-            if (others.Any(o => o <= CreativeTabGuard.CopyOrder)) return "a system runs before the copy: " + others.Min();
-            if (others.Any(o => o >= CreativeTabGuard.RestoreOrder)) return "a system runs after the putting back: " + others.Max();
+            var others = sapi.ModLoader.Mods.SelectMany(m => m.Systems ?? Enumerable.Empty<ModSystem>())
+                .Where(s => s is not CreativeTabCopySystem and not CreativeTabRestoreSystem).ToList();
+            ModSystem? before = others.FirstOrDefault(s => s.ExecuteOrder() <= CreativeTabGuard.CopyOrder);
+            if (before != null) return $"{before.GetType().FullName} runs before the copy ({before.ExecuteOrder()})";
+            ModSystem? after = others.FirstOrDefault(s => s.ExecuteOrder() >= CreativeTabGuard.RestoreOrder);
+            if (after != null) return $"{after.GetType().FullName} runs after the putting back ({after.ExecuteOrder()})";
             if (new CreativeTabCopySystem().ShouldLoad(EnumAppSide.Server) || !new CreativeTabCopySystem().ShouldLoad(EnumAppSide.Client)) return "the copy should only run on players' games";
             if (new CreativeTabRestoreSystem().ShouldLoad(EnumAppSide.Server)) return "the putting back should only run on players' games";
             return null;
