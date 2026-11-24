@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.Server;
+using Vintagestory.API.Util;
 
 namespace EmbalmedEats.Recipes;
 
@@ -85,7 +86,8 @@ public static class GridRecipeGenerator
         }
 
         RecipeBase.CollectiblePreSearchResultsCache.Clear();
-        sapi.Logger.Notification("[Embalmed Eats] Generated {0} wax/resin crafting recipes for {1} preservable foods.", Generated, foods.Count);
+        sapi.Logger.Notification("[Embalmed Eats] Generated {0} wax/resin crafting recipes for {1} preservable foods ({2} left out: another of the {3} recipes of two things in the game already takes the same two).",
+            Generated, foods.Count, Skipped.Count, twoThingRecipes.Count);
         return Generated;
     }
 
@@ -96,30 +98,34 @@ public static class GridRecipeGenerator
         .ToList();
 
     /// <summary>Those of <paramref name="recipes"/> that take <paramref name="preservative"/> as one of their two things.</summary>
-    static List<GridRecipe> WithPreservative(List<GridRecipe> recipes, CollectibleObject preservative)
+    static List<GridRecipe> WithPreservative(List<GridRecipe> recipes, CollectibleObject preservative) =>
+        recipes.Where(r => r.ResolvedIngredients.Any(i => i != null && Takes(i, preservative))).ToList();
+
+    /// <summary>
+    /// Whether <paramref name="ingredient"/> takes <paramref name="coll"/>: the same block or item, or a code pattern
+    /// that matches it. Not SatisfiesAsIngredient: with it, nothing was found while recipes are made (AssetsFinalize),
+    /// not even the game's cheese waxing (most likely 1.22's ingredient tags aren't ready then). Ingredients picked by
+    /// tags only are left out.
+    /// </summary>
+    static bool Takes(CraftingRecipeIngredient ingredient, CollectibleObject coll)
     {
-        var p = new ItemStack(preservative);
-        return recipes.Where(r =>
+        try
         {
-            try { return r.ResolvedIngredients.Any(i => i != null && i.SatisfiesAsIngredient(p, false)); }
-            catch { return false; }
-        }).ToList();
+            if (ingredient.Type != coll.ItemClass) return false;
+            if (!ingredient.IsWildCard && ingredient.ResolvedItemStack?.Id is int id && id != 0) return id == coll.Id;
+            if (ingredient.Code == null || ingredient.Code.Path == "*" || !ingredient.Code.Path.Contains('*')) return ingredient.Code?.Equals(coll.Code) == true;
+            return WildcardUtil.Match(ingredient.Code, coll.Code, ingredient.AllowedVariants);
+        }
+        catch { return false; } // a recipe that can't be compared isn't a reason to fail
     }
 
     /// <summary>The other recipe that <paramref name="food"/> and <paramref name="preservative"/> on their own already make, if any.</summary>
     public static GridRecipe? TakenBy(IEnumerable<GridRecipe> twoThingRecipes, CollectibleObject food, CollectibleObject preservative)
     {
-        var f = new ItemStack(food);
-        var p = new ItemStack(preservative);
         foreach (GridRecipe r in twoThingRecipes)
         {
             CraftingRecipeIngredient[] two = r.ResolvedIngredients.Where(i => i != null).ToArray();
-            try
-            {
-                if ((two[0].SatisfiesAsIngredient(f, false) && two[1].SatisfiesAsIngredient(p, false))
-                    || (two[1].SatisfiesAsIngredient(f, false) && two[0].SatisfiesAsIngredient(p, false))) return r;
-            }
-            catch { } // a recipe the game can't compare isn't a reason to fail
+            if ((Takes(two[0], food) && Takes(two[1], preservative)) || (Takes(two[1], food) && Takes(two[0], preservative))) return r;
         }
         return null;
     }
