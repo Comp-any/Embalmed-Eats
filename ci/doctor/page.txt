@@ -1,0 +1,57 @@
+24.11.2026 05:41:50 [Server Notification] Handling Console Command /doctor embalmedeats
+24.11.2026 05:41:50 [Server Notification] == Embalmed Eats ==
+Version 1.2.2. What it found when it set itself up, and what its settings do.
+✓ All 48 of its changes to the game are in place
+  They are what stop preserved food rotting, feeding you and going into recipes, and what let it go on shelves, in display cases and on the ground.
+✓ It can preserve 667 kinds of food (0 of them from other mods)
+  The game: 667
+  57 foods that normally can't go on the ground can once preserved
+✓ All 4 switched-on preserving methods work
+  Wax dipping: 1 Beeswax per food in the crafting grid (666 recipes)
+  Wax dipping: no recipe for 1 food(s), because another recipe already makes something from the same two things (the grid can offer only one; they can still be preserved the other ways): Raw cheese (salted) + Beeswax → Raw cheese (waxed)
+  Resin lacquer: 1 Resin per food in the crafting grid (667 recipes)
+  Formaldehyde: 0.25 L of solution per food, sealed for 48 hours
+  Salt and lime cure: 1 curing salt per food, sealed for 120 hours
+
+== What counts as food ==
+It can preserve 667 kinds of food (0 of them from other mods)
+  The game: 667
+AlwaysPreservable: -
+NeverPreservable: game:rot
+  game:rot matches 1
+Something can be preserved when it feeds you, goes into meals, rots or holds a meal, unless it's a liquid. NeverPreservable, AlwaysPreservable and a mod's own embalmedeatsPreservable come first.
+
+== Preserving methods ==
+Wax dipping: in the crafting grid with 1 Beeswax per food
+Resin lacquer: in the crafting grid with 1 Resin per food
+Formaldehyde: seal it in a barrel with 0.25 L of formaldehyde solution per food, for 48 hours
+Salt and lime cure: seal it in a barrel with 1 curing salt per food, for 120 hours
+1333 wax and resin recipes were made when the server started.
+
+== Where preserved food can go ==
+Shelves: on
+Display cases: on
+The ground: on (57 foods that normally can't go there can once preserved)
+Shrinking food with no display size of its own: 0.5×
+
+== Eating preserved food ==
+From toxicity 1: queasy (loses 30% hunger, 0 poison damage, nausea 0, 0% slower)
+From toxicity 2: retching (loses 50% hunger, 2 poison damage, nausea 0, 0% slower)
+From toxicity 3: poisoned (loses 80% hunger, 6 poison damage, nausea 0.5, 0% slower)
+From toxicity 4: severe (loses 100% hunger, 12 poison damage, nausea 1, 30% slower)
+From toxicity 5: lethal (loses 100% hunger, 40 poison damage, nausea 1.1, 50% slower)
+Each preserved food eaten adds 1; one point wears off every 8 in-game hours; it stops at 10.
+Nobody playing right now is poisoned.
+
+== Its changes to the game ==
+Stopping rot: 11 changes
+No nutrition from preserved food: 4 changes
+Sickness when it's eaten: 3 changes
+Keeping it out of recipes, cooking and querns: 9 changes
+Names and tooltips: 2 changes
+The barrel methods: 2 changes
+Shelves and display cases: 3 changes
+Placing it on the ground: 4 changes
+Handbook links: 10 changes
+Everything the doctor knows about Embalmed Eats (/doctor mod embalmedeats) Its lines in the log (/doctor log embalmedeats)
+Saved to ModData/vintagedoctor/last-report-server.txt

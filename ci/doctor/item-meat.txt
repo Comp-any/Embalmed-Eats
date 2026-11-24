@@ -1,0 +1,17 @@
+24.11.2026 05:42:02 [Server Notification] Handling Console Command /doctor item game:redmeat-raw
+24.11.2026 05:42:02 [Server Notification] == A block or item ==
+• Raw redmeat (game:redmeat-raw) comes from the game itself
+  An item with the code game:redmeat-raw; class Item; run by Vintagestory.API.Common.Item
+  Behaviours: CollectibleBehaviorGroundStorable
+✓ The log has no error or warning that mentions it.
+
+== What your mods say about it ==
+• Embalmed Eats: Can be preserved, because it goes into meals
+  Wax dipping: in the crafting grid with 1 Beeswax per food
+  Resin lacquer: in the crafting grid with 1 Resin per food
+  Formaldehyde: seal it in a barrel with 0.25 L of formaldehyde solution per food, for 48 hours
+  Salt and lime cure: seal it in a barrel with 1 curing salt per food, for 120 hours
+
+== Next ==
+Why can't I craft it? (/doctor craft game:redmeat-raw) Back to the check-up (/doctor)
+Saved to ModData/vintagedoctor/last-report-server.txt

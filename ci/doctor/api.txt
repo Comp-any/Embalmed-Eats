@@ -1,0 +1,11 @@
+24.11.2026 05:42:14 [Server Notification] Handling Console Command /doctor api
+24.11.2026 05:42:14 [Server Notification] == For mod authors ==
+Other mods can hand the doctor their own checks, fixes, pages and explanations for log messages. This page shows what has been handed over on this side.
+• 0 check(s), 0 fix(es) and 1 page(s) from other mods; 23 log message(s) the doctor can explain.
+    Page from Embalmed Eats: /doctor embalmedeats
+• 2 vintagedoctor.json file(s) read
+  vintagedoctor:config/vintagedoctor.json
+  embalmedeats:config/vintagedoctor.json
+Three ways in: a few lines of C#, the event bus (no reference to the doctor needed), or a JSON file in your mod's assets (no code at all).
+How to hand the doctor your own checks (https://github.com/Comp-any/Vintage-Doctor/blob/main/docs/api.md)
+Saved to ModData/vintagedoctor/last-report-server.txt

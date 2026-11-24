@@ -1,0 +1,20 @@
+24.11.2026 05:41:54 [Server Notification] Handling Console Command /doctor embalmedeats item game:redmeat-raw
+24.11.2026 05:41:54 [Server Notification] == Can Raw redmeat (game:redmeat-raw) be preserved? ==
+✓ Can be preserved, because it goes into meals
+The rules, in the order they're tried (the first that applies decides):
+  Never list (NeverPreservable): no match
+  Always list (AlwaysPreservable): no match
+  Its own embalmedeatsPreservable: not set
+  One of Embalmed Eats' own items: no
+  A liquid: no
+  Holds a meal: no
+  Feeds you: no
+  Goes into meals: yes
+  Rots: yes
+How:
+  Wax dipping: in the crafting grid with 1 Beeswax per food
+  Resin lacquer: in the crafting grid with 1 Resin per food
+  Formaldehyde: seal it in a barrel with 0.25 L of formaldehyde solution per food, for 48 hours
+  Salt and lime cure: seal it in a barrel with 1 curing salt per food, for 120 hours
+Embalmed Eats' page (/doctor embalmedeats)
+Saved to ModData/vintagedoctor/last-report-server.txt

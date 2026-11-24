@@ -1,0 +1,645 @@
+24.11.2026 05:40:40 [Notification] Server logger started.
+24.11.2026 05:40:40 [Notification] Game Version: v1.22.7 (Stable)
+24.11.2026 05:40:41 [Notification] C# Framework: .net 10.0.15
+24.11.2026 05:40:41 [Notification] Zstd Version: 1.5.7
+24.11.2026 05:40:41 [Notification] Operating System: Linux (Ubuntu 26.04.1 LTS) [Kernel 7.0.0.1020]
+24.11.2026 05:40:41 [Notification] CPU Cores: 4
+24.11.2026 05:40:41 [Notification] CPU: AMD EPYC 7763 64-Core Processor
+24.11.2026 05:40:41 [Notification] Available RAM: 15983 MB
+24.11.2026 05:40:41 [Event] It begins...
+24.11.2026 05:40:41 [Event] Launching server...
+24.11.2026 05:40:41 [Event] It senses...
+24.11.2026 05:40:41 [Event] Server v1.22.7, network v1.22.6, api v1.22.0
+24.11.2026 05:40:41 [Notification] Entering runphase Initialization
+24.11.2026 05:40:41 [Event] Loading configuration...
+24.11.2026 05:40:41 [Notification] Entering runphase Configuration
+24.11.2026 05:40:41 [Notification] serverconfig.json not found, creating new one
+24.11.2026 05:40:41 [Notification] Loading savegame
+24.11.2026 05:40:41 [Notification] Create new save game data. Playstyle: surviveandbuild
+24.11.2026 05:40:41 [Notification] Savegame ~/work/Embalmed-Eats/Embalmed-Eats/vsdata-doctor/Saves/default.vcdbs loaded
+24.11.2026 05:40:41 [Notification] World size = 1024000 256 1024000
+24.11.2026 05:40:41 [Notification] Start discovering assets
+24.11.2026 05:40:41 [Notification] Found 2 base assets in category blocktypes
+24.11.2026 05:40:41 [Notification] Found 0 base assets in category itemtypes
+24.11.2026 05:40:41 [Notification] Found 35 base assets in category lang
+24.11.2026 05:40:41 [Notification] Found 0 base assets in category patches
+24.11.2026 05:40:41 [Notification] Found 24 base assets in category config
+24.11.2026 05:40:41 [Notification] Found 0 base assets in category worldproperties
+24.11.2026 05:40:41 [Notification] Found 1 base assets in category sounds
+24.11.2026 05:40:41 [Notification] Found 230 base assets in category shapes
+24.11.2026 05:40:41 [Notification] Found 21 base assets in category textures
+24.11.2026 05:40:41 [Notification] Found 0 base assets in category recipes
+24.11.2026 05:40:41 [Notification] Found 0 base assets in category worldgen
+24.11.2026 05:40:41 [Notification] Found 3 base assets in category entities
+24.11.2026 05:40:41 [Notification] Found 316 base assets in total
+24.11.2026 05:40:41 [Event] Building assets...
+24.11.2026 05:40:41 [Notification] Entering runphase LoadAssets
+24.11.2026 05:40:42 [Notification] Will search the following paths for mods:
+24.11.2026 05:40:42 [Notification]     ~/work/Embalmed-Eats/Embalmed-Eats/vs/Mods
+24.11.2026 05:40:42 [Notification]     ~/work/Embalmed-Eats/Embalmed-Eats/vsdata-doctor/Mods
+24.11.2026 05:40:42 [Notification] Found 5 mods (0 disabled)
+24.11.2026 05:40:42 [Notification] Mods, sorted by dependency: game, vintagedoctor, creative, survival, embalmedeats
+24.11.2026 05:40:42 [Notification] Instantiated 152 mod systems from 5 enabled mods
+24.11.2026 05:40:42 [Notification] External Origins in load order: modorigin@~/work/Embalmed-Eats/Embalmed-Eats/vs/assets/creative/, modorigin@~/work/Embalmed-Eats/Embalmed-Eats/vs/assets/survival/, mod@vintagedoctor_1.4.0.zip, mod@EmbalmedEats_v1.2.2.zip
+24.11.2026 05:40:42 [Notification] Found 541 external assets in category blocktypes
+24.11.2026 05:40:42 [Notification] Found 317 external assets in category itemtypes
+24.11.2026 05:40:42 [Notification] Found 2 external assets in category lang
+24.11.2026 05:40:42 [Notification] Found 11 external assets in category patches
+24.11.2026 05:40:42 [Notification] Found 131 external assets in category config
+24.11.2026 05:40:42 [Notification] Found 25 external assets in category worldproperties
+24.11.2026 05:40:42 [Notification] Found 1 external assets in category sounds
+24.11.2026 05:40:42 [Notification] Found 6123 external assets in category shapes
+24.11.2026 05:40:42 [Notification] Found 28 external assets in category textures
+24.11.2026 05:40:42 [Notification] Found 421 external assets in category recipes
+24.11.2026 05:40:42 [Notification] Found 1455 external assets in category worldgen
+24.11.2026 05:40:42 [Notification] Found 74 external assets in category entities
+24.11.2026 05:40:42 [Notification] Found 0 external assets in category compatibility
+24.11.2026 05:40:42 [Notification] Reloaded lang file with mod assets
+24.11.2026 05:40:43 [Notification] [Embalmed Eats] Applied 48 patches (11 transition, 4 nutrition, 3 eating, 9 crafting, 2 barrel, 3 display). 0 problems.
+24.11.2026 05:40:43 [Notification] Compatibility lib: 0 assets added, 0 assets replaced.
+24.11.2026 05:40:43 [Notification] JsonPatch Loader: 18 patches total, successfully applied 18 patches, unmet conditions on 23 patches, no errors
+24.11.2026 05:40:43 [Event] It remembers...
+24.11.2026 05:40:47 [Notification] Loaded 4470 unique items
+24.11.2026 05:40:47 [Event] All that came before...
+24.11.2026 05:40:50 [Notification] Loaded 14089 unique blocks
+24.11.2026 05:40:51 [Notification] Loaded 820 unique entitiess
+24.11.2026 05:40:51 [Notification] BlockLoader: Entities, Blocks and Items loaded
+24.11.2026 05:40:51 [Event] Remapping blocks and items...
+24.11.2026 05:40:51 [Event] 15 cooking recipes loaded
+24.11.2026 05:40:51 [Event] Taste and smell...
+24.11.2026 05:40:51 [Event] 9 metal alloys loaded
+24.11.2026 05:40:51 [Event] Glimmers in the soil...
+24.11.2026 05:40:52 [Event] 1153 grid recipes loaded from 269 files
+24.11.2026 05:40:52 [Event] Grand inventions...
+24.11.2026 05:40:52 [Event] 44 smithing recipes loaded from 43 files
+24.11.2026 05:40:52 [Event] Burning sparks...
+24.11.2026 05:40:52 [Event] 31 clay forming recipes loaded from 31 files
+24.11.2026 05:40:52 [Event] Molded forms...
+24.11.2026 05:40:52 [Event] 12 knapping recipes loaded from 12 files
+24.11.2026 05:40:52 [Event] Simple tools...
+24.11.2026 05:40:52 [Event] 91 barrel recipe recipes loaded from 42 files
+24.11.2026 05:40:52 [Notification] Tags registry was locked.
+24.11.2026 05:40:52 [Notification] Entering runphase AssetsFinalize
+24.11.2026 05:40:53 [Notification] [Embalmed Eats] No wax recipe for game:rawcheese-salted: game:rawcheese-salted + game:beeswax already make game:rawcheese-waxed (game:recipes/grid/waxedcheese.json).
+24.11.2026 05:40:53 [Notification] [Embalmed Eats] Generated 1333 wax/resin crafting recipes for 667 preservable foods (1 left out: another of the 4114 recipes of two things in the game already takes the same two).
+24.11.2026 05:40:53 [Notification] [Embalmed Eats] Ground storage added to 57 preservable items that didn't have it (Server).
+24.11.2026 05:40:53 [Notification] [Embalmed Eats] Creative tabs: 518 foods added (Server).
+24.11.2026 05:40:53 [Event] Server assets loaded, parsed, registered and finalized
+24.11.2026 05:40:53 [Event] Initialising systems...
+24.11.2026 05:40:53 [Notification] Entering runphase LoadGamePre
+24.11.2026 05:40:53 [Notification] Reloaded 19 weather patterns, 5 wind patterns and 5 weather events
+24.11.2026 05:40:53 [Notification] Started 127 systems on Server:
+24.11.2026 05:40:53 [Notification]     Mod 'VSEssentials.dll' (game):
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.Core
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenTerra
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenSnowLayer
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.EntityPartitioning
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ErrorReporter
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenTerraPostProcess
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.ModCompatiblityUtil
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.NoObf.ModJsonPatchLoader
+24.11.2026 05:40:53 [Notification]         FluffyClouds.FluffyCloudsModSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.Systems.ModSystemTfEditFromAttributes
+24.11.2026 05:40:53 [Notification]         Vintagestory.Essentials.PathfindSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.Essentials.PathFindDebug
+24.11.2026 05:40:53 [Notification]         Vintagestory.Essentials.PathfindingAsync
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.JsonExport
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.ModBasicBlocksLoader
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenMaps
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenRockStrataNew
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenHotSprings
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenCreatures
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.ModSystemWorldGenStructures
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemItemRendererOptimizer
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.AiRuntimeConfig
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemSyncHarvestableDropsToClient
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemEmotes
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.LeafBlockDecay
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.POIRegistry
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.RoomRegistry
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.WeatherSystemCommands
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.WeatherSystemServer
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.SystemRemotePlayerTracking
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.WorldMapManager
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenDeposits
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.NoObf.ModRegistryObjectTypeLoader
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.LoadColorMaps
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenCaves
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenStructures
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.WgenCommands
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenBlockLayers
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenPonds
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ClothManager
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenStructuresPosPass
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenVegetationAndPatches
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenRivulets
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenLightSurvival
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.CollectibleBuffDebug
+24.11.2026 05:40:53 [Notification]     Mod 'VSSurvivalMod.dll' (survival):
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemControlPoints
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.SurvivalCoreSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.Systems.StoryLockableDoor
+24.11.2026 05:40:53 [Notification]         Vintagestory.Client.NoObf.StoryGenFailedSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.UpgradeTasks
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.ChiselBlockBulkSetMaterial
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.ModSystemDetailModeSync
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.NpcControl
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.ModSystemTiledDungeons
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemExplosionAffectedStability
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.MyceliumSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModsystemButterflySpawnCondsExtra
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemFishInstaFlee
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemCatchCreature
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.FishingSupportModSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemGliding
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemSnowShoveling
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemSubTongsDurability
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemSwoopDev
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.Timeswitch
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ClutterBookshelfUtil
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ScreenshakeToClientModSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemResoArchiveCommands
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.StoryStructuresSpawnConditions
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemNPCHairStyling
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemSkinnableAdditions
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemVillagerDebug
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemAuction
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemBlockReinforcement
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.Core
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemBoatingSoundAndRatlineStamina
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.CharacterSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.CustomSpawnConditions
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.VariablesModSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModsystemElevator
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ActivityModSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ActivityEditorSystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemFarming
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemCommandHandbook
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemTutorial
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.HeldItemMouseInputHandler
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemCorpseReturnTeleporter
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemNightVision
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.TobiasTeleporter
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModJournal
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.LiquidItemStackRenderer
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemStructureLocator
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModLootRandomizer
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemEntityOwnership
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemRifts
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemRiftWeather
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSleeping
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemSupportBeamPlacer
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.TeleporterManager
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModTemperature
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.SystemTemporalStability
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.TemporalStabilityEffects
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemClimateSpecificTraderTypes
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemWearableStats
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemEditableBook
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.Mechanics.ModSystemWindTurbulence
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.Mechanics.MechanicalPowerMod
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenDungeons
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.GenStoryStructures
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.WgenCommandsExt
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenDevastationLayer
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.RecipeRegistrySystem
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.RecipeLoader
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemFishDepletion
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemWormGrunting
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemFireFromLightning
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemOreMap
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemSnowballs
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.HumanoidOutfits
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.ModSystemDevastationEffects
+24.11.2026 05:40:53 [Notification]         Vintagestory.GameContent.DisableRecipeRegisteringSystem
+24.11.2026 05:40:53 [Notification]     Mod 'VSCreativeMod.dll' (creative):
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.Core
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.WorldEdit.WorldEdit
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenBlockLayersFlat
+24.11.2026 05:40:53 [Notification]         Vintagestory.ServerMods.GenLightCreative
+24.11.2026 05:40:53 [Notification]     Mod 'vintagedoctor_1.4.0.zip' (vintagedoctor):
+24.11.2026 05:40:53 [Notification]         VintageDoctor.VintageDoctorSystem
+24.11.2026 05:40:53 [Notification]     Mod 'EmbalmedEats_v1.2.2.zip' (embalmedeats):
+24.11.2026 05:40:53 [Notification]         EmbalmedEats.EmbalmedEatsModSystem
+24.11.2026 05:40:53 [Event] 26 traits loaded from 1 files
+24.11.2026 05:40:53 [Event] 6 classes loaded from 1 files
+24.11.2026 05:40:56 [Notification] Server map set
+24.11.2026 05:40:56 [Event] A world unbroken...
+24.11.2026 05:40:56 [Notification] Entering runphase GameReady
+24.11.2026 05:40:56 [Notification] Entering runphase WorldReady
+24.11.2026 05:40:56 [Event] The center unfolding...
+24.11.2026 05:40:56 [Event] Starting world generators...
+24.11.2026 05:41:00 [Notification] Reloaded 35 tree generators
+24.11.2026 05:41:00 [Event] Loading 7x7x8 spawn chunks...
+24.11.2026 05:41:00 [Event] 0% (49 in queue)
+24.11.2026 05:41:00 [Event] The carved mountains...
+24.11.2026 05:41:03 [Notification] Dungeon with 123 schematics generated
+24.11.2026 05:41:04 [Event] 0% (49 in queue)
+24.11.2026 05:41:04 [Event] The rolling hills...
+24.11.2026 05:41:06 [Event] 0% (81 in queue)
+24.11.2026 05:41:06 [Event] The sheer cliffs...
+24.11.2026 05:41:08 [Event] 0% (113 in queue)
+24.11.2026 05:41:08 [Event] The endless plains...
+24.11.2026 05:41:09 [Event] 0% (152 in queue)
+24.11.2026 05:41:09 [Event] The winter snows...
+24.11.2026 05:41:11 [Event] 0% (178 in queue)
+24.11.2026 05:41:11 [Event] And scorching deserts...
+24.11.2026 05:41:12 [Event] Begin game ticking...
+24.11.2026 05:41:12 [Event] ... it calls to you
+24.11.2026 05:41:12 [Notification] Entering runphase RunGame
+24.11.2026 05:41:12 [Notification] Starting server threads
+24.11.2026 05:41:12 [Event] Dedicated Server now running on Port 42420 and all ips!
+24.11.2026 05:41:12 [Event] Return again.
+24.11.2026 05:41:12 [Notification] Please be aware that as of 1.20, servers default configurations have changed - servers no longer register themselves to the public servers list and are invite-only (whitelisted) out of the box. If you desire so, you can enable server advertising with '/serverconfig advertise on' and disable the whitelist mode with '/serverconfig whitelistmode off'
+24.11.2026 05:41:16 [Notification] [vintagedoctor] Check-up after start-up: nothing wrong (91 ms to read the logs and folders).
+24.11.2026 05:41:22 [Warning] Server overloaded. A tick took 667ms to complete.
+24.11.2026 05:41:26 [Notification] Handling Console Command /embalmedeats selftest
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] Vintage Doctor fix embalmedeats:default (ToxicityPerItem): Put ToxicityPerItem back to its default (0.0 → 1.0). The old settings file was kept as /tmp/embalmedeats-selftest/2026-11-24_05-41-26/embalmedeats-4.json.
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: core patches applied
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: mod items loaded
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: food detection
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: preserving stops rotting
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: preserved food gives no nutrition but stays edible
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: names, tooltips and lang
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: preserved and fresh food don't stack together
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: wax and resin recipes generated
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: wax and resin recipes never take another recipe's ingredients
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: wax recipe makes a preserved copy of the same food
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: preserved food refused by recipes
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: formaldehyde barrel soak
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: salt & lime barrel cure
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: barrel needs enough agent
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: formaldehyde and curing salt are craftable
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: meal containers preserved through their contents
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: shelves accept preserved food
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: toxicity escalates from vomiting to lethal
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: help command lists every command
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: handbook: preserved items open the guide
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: ground storage for preserved food
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: creative tabs, one per method
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: creative lists: players get exactly the server's
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: creative lists: what another mod changes on a player's game only is put back
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: server-side handbook calls are safe
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: check-up cards
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: settings that make no sense are found
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: fixes
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: cards about one item
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: its page
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: the player's game against the server
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: the creative tabs compare the same after the trip to a player's game
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: words for every reason and part of the mod
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: Vintage Doctor: its JSON file
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST ok: /embalmedeats check
+24.11.2026 05:41:26 [Notification] [Embalmed Eats] SELFTEST PASS (35/35)
+24.11.2026 05:41:26 [Notification] SELFTEST ok: core patches applied
+SELFTEST ok: mod items loaded
+SELFTEST ok: food detection
+SELFTEST ok: preserving stops rotting
+SELFTEST ok: preserved food gives no nutrition but stays edible
+SELFTEST ok: names, tooltips and lang
+SELFTEST ok: preserved and fresh food don't stack together
+SELFTEST ok: wax and resin recipes generated
+SELFTEST ok: wax and resin recipes never take another recipe's ingredients
+SELFTEST ok: wax recipe makes a preserved copy of the same food
+SELFTEST ok: preserved food refused by recipes
+SELFTEST ok: formaldehyde barrel soak
+SELFTEST ok: salt & lime barrel cure
+SELFTEST ok: barrel needs enough agent
+SELFTEST ok: formaldehyde and curing salt are craftable
+SELFTEST ok: meal containers preserved through their contents
+SELFTEST ok: shelves accept preserved food
+SELFTEST ok: toxicity escalates from vomiting to lethal
+SELFTEST ok: help command lists every command
+SELFTEST ok: handbook: preserved items open the guide
+SELFTEST ok: ground storage for preserved food
+SELFTEST ok: creative tabs, one per method
+SELFTEST ok: creative lists: players get exactly the server's
+SELFTEST ok: creative lists: what another mod changes on a player's game only is put back
+SELFTEST ok: server-side handbook calls are safe
+SELFTEST ok: Vintage Doctor: check-up cards
+SELFTEST ok: Vintage Doctor: settings that make no sense are found
+SELFTEST ok: Vintage Doctor: fixes
+SELFTEST ok: Vintage Doctor: cards about one item
+SELFTEST ok: Vintage Doctor: its page
+SELFTEST ok: Vintage Doctor: the player's game against the server
+SELFTEST ok: Vintage Doctor: the creative tabs compare the same after the trip to a player's game
+SELFTEST ok: Vintage Doctor: words for every reason and part of the mod
+SELFTEST ok: Vintage Doctor: its JSON file
+SELFTEST ok: /embalmedeats check
+SELFTEST PASS (35/35)
+24.11.2026 05:41:26 [Warning] Server overloaded. A tick took 825ms to complete.
+24.11.2026 05:41:34 [Notification] Handling Console Command /embalmedeats help
+24.11.2026 05:41:34 [Notification] Embalmed Eats commands:
+/embalmedeats help - Show this list
+/embalmedeats preserve [wax|resin|formaldehyde|saltcure] - Preserve the food in your hand straight away (method: wax, resin, formaldehyde or saltcure)
+/embalmedeats unpreserve - Make the preserved food in your hand normal again
+/embalmedeats toxicity [player] - Show how poisoned you (or another player) are from eating preserved food
+/embalmedeats cure [player] - Clear the poisoning
+/embalmedeats info - Show how many foods the mod found and what it patched
+/embalmedeats check - Check whether the mod is set up properly (what Vintage Doctor shows)
+/embalmedeats fix <name> [argument] - Do one of the fixes the check offers
+/embalmedeats selftest - Run the mod's built-in checks
+24.11.2026 05:41:38 [Notification] Handling Console Command /embalmedeats 
+24.11.2026 05:41:38 [Notification] Embalmed Eats commands:
+/embalmedeats help - Show this list
+/embalmedeats preserve [wax|resin|formaldehyde|saltcure] - Preserve the food in your hand straight away (method: wax, resin, formaldehyde or saltcure)
+/embalmedeats unpreserve - Make the preserved food in your hand normal again
+/embalmedeats toxicity [player] - Show how poisoned you (or another player) are from eating preserved food
+/embalmedeats cure [player] - Clear the poisoning
+/embalmedeats info - Show how many foods the mod found and what it patched
+/embalmedeats check - Check whether the mod is set up properly (what Vintage Doctor shows)
+/embalmedeats fix <name> [argument] - Do one of the fixes the check offers
+/embalmedeats selftest - Run the mod's built-in checks
+24.11.2026 05:41:42 [Notification] Handling Console Command /embalmedeats check
+24.11.2026 05:41:42 [Notification] ✓ All 48 of its changes to the game are in place
+    They are what stop preserved food rotting, feeding you and going into recipes, and what let it go on shelves, in display cases and on the ground.
+✓ It can preserve 667 kinds of food (0 of them from other mods)
+    The game: 667
+    57 foods that normally can't go on the ground can once preserved
+✓ All 4 switched-on preserving methods work
+    Wax dipping: 1 Beeswax per food in the crafting grid (666 recipes)
+    Wax dipping: no recipe for 1 food(s), because another recipe already makes something from the same two things (the grid can offer only one; they can still be preserved the other ways): Raw cheese (salted) + Beeswax → Raw cheese (waxed)
+    Resin lacquer: 1 Resin per food in the crafting grid (667 recipes)
+    Formaldehyde: 0.25 L of solution per food, sealed for 48 hours
+    Salt and lime cure: 1 curing salt per food, sealed for 120 hours
+24.11.2026 05:41:46 [Notification] Handling Console Command /doctor 
+24.11.2026 05:41:46 [Notification] == The game (Vintage Story 1.22.7) ==
+✓ No crash reports: the game hasn't crashed on this side.
+✓ All 2 mod(s) loaded and started without the game reporting a problem.
+✓ No errors in the log this session.
+✓ 2 mod file(s) in 2 folder(s), nothing wrong with them.
+  Every file in 2 zip(s) was read to the end.
+✓ 4 config file(s) read without a problem.
+⚠ The server is falling behind: a tick every 36.1 ms (28 a second), 6 long pauses in the last 10 minutes (the worst 825 ms)
+  The world moves in steps ('ticks'), 33 ms apart when all is well. When a step takes longer, everything stutters at once: animals jump, doors open late, blocks you break come back for a moment.
+  → Press the measuring button: after 20 seconds this page shows what the time went on, by part of the game and by mod.
+  Last minute: average 36.1 ms, 95% under 34 ms, worst 825 ms (932 ticks).
+  The game itself logged 2 tick(s) over half a second this session (the worst 825 ms; 2 in the last 10 minutes).
+  Measure where the time goes (20 seconds) (/doctor fix doctor:profile 20)
+✓ 0 creatures and things loaded (0 items on the ground), 8 chunks, 0 player(s).
+  8 chunks loaded for 0 player(s).
+✓ Memory: the game holds 1.2 GB of the 15.6 GB it can use.
+  698.8 MB in the game's own objects; 15 full clean-ups so far; 4 processor threads.
+✓ 86.7 GB free where the world is saved.
+  The save file is 4.7 MB.
+✓ Nothing in this world comes from a mod that isn't installed.
+✓ Time runs at the normal pace.
+✓ Every block and item that needs code has it.
+✓ No mod tries to change a file that isn't there.
+✓ Every mod that has block and item files has them in the game.
+✓ No mod brings its own copy of a library the game or another mod already has.
+✓ No two mods replace the same file, and none replaces the game's own.
+✓ No recipe from a mod has the same ingredients as another recipe that makes something else (14329 crafting recipes looked at).
+✓ 0 JSON patches in 1 files, no two mods replacing the same thing.
+✓ Every mod's blocks and items have names.
+✓ No two mods change the same place in the game's code.
+• This is the first session the doctor has seen here, so there is nothing to compare with yet.
+  From now on it notes the mods and their versions at every start, and shows here what changed.
+Pick what matches; each opens a page that looks into just that.
+The game crashed (/doctor crash)
+The game is slow or stutters (/doctor perf)
+A mod isn't working (/doctor mods)
+Something broke after I added or updated mods (/doctor changes)
+An item looks or acts wrong (hold it first) (/doctor item hand)
+The block I'm looking at looks or acts wrong (/doctor block)
+I can't craft something (/doctor craft hand)
+Show me what happened while the game started (/doctor startup)
+Show me every error and warning (/doctor log)
+Check my Mods folder and config files (/doctor files)
+Are any mods getting in each other's way? (/doctor clashes)
+Which mods change the game's code? (/doctor patches)
+Is my world all right? (/doctor world)
+Put together a report to post (/doctor bugreport)
+For mod authors: what mods told the doctor (/doctor api)
+
+== Embalmed Eats 1.2.2 ==
+• 1 mod(s) change the game's code in 48 place(s)
+  Embalmed Eats (48)
+  Mods patch the game's own code where it offers no other way in. It is normal, but it is also what breaks first when the game updates, and two mods patching the same place can get in each other's way.
+  All code patches (/doctor patches)
+✓ All 48 of its changes to the game are in place
+  They are what stop preserved food rotting, feeding you and going into recipes, and what let it go on shelves, in display cases and on the ground.
+✓ It can preserve 667 kinds of food (0 of them from other mods)
+  The game: 667
+  57 foods that normally can't go on the ground can once preserved
+  Embalmed Eats' page (/doctor embalmedeats)
+✓ All 4 switched-on preserving methods work
+  Wax dipping: 1 Beeswax per food in the crafting grid (666 recipes)
+  Wax dipping: no recipe for 1 food(s), because another recipe already makes something from the same two things (the grid can offer only one; they can still be preserved the other ways): Raw cheese (salted) + Beeswax → Raw cheese (waxed)
+  Resin lacquer: 1 Resin per food in the crafting grid (667 recipes)
+  Formaldehyde: 0.25 L of solution per food, sealed for 48 hours
+  Salt and lime cure: 1 curing salt per food, sealed for 120 hours
+Something is wrong with preserved food (Embalmed Eats) (/doctor embalmedeats)
+Everything about Embalmed Eats (/doctor mod embalmedeats)
+
+== The other mods ==
+✓ 1 mod(s) have nothing against them
+  Vintage Doctor
+Every mod at a glance (/doctor mods)
+Every page is a command: /doctor crash, perf, mods, mod <mod id>, log [mod id], startup, files, patches, changes, world, item <code>, craft <code>, bugreport [mod id], api. A fix: /doctor fix <id> [argument].
+Saved to ModData/vintagedoctor/last-report-server.txt
+24.11.2026 05:41:50 [Notification] Handling Console Command /doctor embalmedeats
+24.11.2026 05:41:50 [Notification] == Embalmed Eats ==
+Version 1.2.2. What it found when it set itself up, and what its settings do.
+✓ All 48 of its changes to the game are in place
+  They are what stop preserved food rotting, feeding you and going into recipes, and what let it go on shelves, in display cases and on the ground.
+✓ It can preserve 667 kinds of food (0 of them from other mods)
+  The game: 667
+  57 foods that normally can't go on the ground can once preserved
+✓ All 4 switched-on preserving methods work
+  Wax dipping: 1 Beeswax per food in the crafting grid (666 recipes)
+  Wax dipping: no recipe for 1 food(s), because another recipe already makes something from the same two things (the grid can offer only one; they can still be preserved the other ways): Raw cheese (salted) + Beeswax → Raw cheese (waxed)
+  Resin lacquer: 1 Resin per food in the crafting grid (667 recipes)
+  Formaldehyde: 0.25 L of solution per food, sealed for 48 hours
+  Salt and lime cure: 1 curing salt per food, sealed for 120 hours
+
+== What counts as food ==
+It can preserve 667 kinds of food (0 of them from other mods)
+  The game: 667
+AlwaysPreservable: -
+NeverPreservable: game:rot
+  game:rot matches 1
+Something can be preserved when it feeds you, goes into meals, rots or holds a meal, unless it's a liquid. NeverPreservable, AlwaysPreservable and a mod's own embalmedeatsPreservable come first.
+
+== Preserving methods ==
+Wax dipping: in the crafting grid with 1 Beeswax per food
+Resin lacquer: in the crafting grid with 1 Resin per food
+Formaldehyde: seal it in a barrel with 0.25 L of formaldehyde solution per food, for 48 hours
+Salt and lime cure: seal it in a barrel with 1 curing salt per food, for 120 hours
+1333 wax and resin recipes were made when the server started.
+
+== Where preserved food can go ==
+Shelves: on
+Display cases: on
+The ground: on (57 foods that normally can't go there can once preserved)
+Shrinking food with no display size of its own: 0.5×
+
+== Eating preserved food ==
+From toxicity 1: queasy (loses 30% hunger, 0 poison damage, nausea 0, 0% slower)
+From toxicity 2: retching (loses 50% hunger, 2 poison damage, nausea 0, 0% slower)
+From toxicity 3: poisoned (loses 80% hunger, 6 poison damage, nausea 0.5, 0% slower)
+From toxicity 4: severe (loses 100% hunger, 12 poison damage, nausea 1, 30% slower)
+From toxicity 5: lethal (loses 100% hunger, 40 poison damage, nausea 1.1, 50% slower)
+Each preserved food eaten adds 1; one point wears off every 8 in-game hours; it stops at 10.
+Nobody playing right now is poisoned.
+
+== Its changes to the game ==
+Stopping rot: 11 changes
+No nutrition from preserved food: 4 changes
+Sickness when it's eaten: 3 changes
+Keeping it out of recipes, cooking and querns: 9 changes
+Names and tooltips: 2 changes
+The barrel methods: 2 changes
+Shelves and display cases: 3 changes
+Placing it on the ground: 4 changes
+Handbook links: 10 changes
+Everything the doctor knows about Embalmed Eats (/doctor mod embalmedeats) Its lines in the log (/doctor log embalmedeats)
+Saved to ModData/vintagedoctor/last-report-server.txt
+24.11.2026 05:41:54 [Notification] Handling Console Command /doctor embalmedeats item game:redmeat-raw
+24.11.2026 05:41:54 [Notification] == Can Raw redmeat (game:redmeat-raw) be preserved? ==
+✓ Can be preserved, because it goes into meals
+The rules, in the order they're tried (the first that applies decides):
+  Never list (NeverPreservable): no match
+  Always list (AlwaysPreservable): no match
+  Its own embalmedeatsPreservable: not set
+  One of Embalmed Eats' own items: no
+  A liquid: no
+  Holds a meal: no
+  Feeds you: no
+  Goes into meals: yes
+  Rots: yes
+How:
+  Wax dipping: in the crafting grid with 1 Beeswax per food
+  Resin lacquer: in the crafting grid with 1 Resin per food
+  Formaldehyde: seal it in a barrel with 0.25 L of formaldehyde solution per food, for 48 hours
+  Salt and lime cure: seal it in a barrel with 1 curing salt per food, for 120 hours
+Embalmed Eats' page (/doctor embalmedeats)
+Saved to ModData/vintagedoctor/last-report-server.txt
+24.11.2026 05:41:58 [Notification] Handling Console Command /doctor mod embalmedeats
+24.11.2026 05:41:58 [Notification] == Embalmed Eats ==
+• Embalmed Eats 1.2.2, by demonic69
+  Mod id embalmedeats; Code mod; runs on: Universal; file EmbalmedEats_v1.2.2.zip
+  Preserve any food (vanilla or modded) as permanent decoration. Embalmed food never rots and keeps its original look, but eating it is a very bad idea. Methods: formaldehyde barrel soak, salt & lime barrel cure, wax dipping and resin lacquer.
+  Its website (https://github.com/Comp-any/Embalmed-Eats) Find Embalmed Eats on the Mod DB (https://mods.vintagestory.at/list/mod?text=Embalmed%20Eats)
+✓ Everything it needs is there (2).
+  The game: wants 1.22.0 or newer, this is 1.22.7
+  Survival Mode: wants * or newer, 1.22.7 is installed
+✓ In the game from this mod: 0 blocks, 2 items, 0 creatures.
+✓ Its config file(s) read fine: embalmedeats.json
+  If the mod acts oddly after an update, an old config is a common reason: starting it afresh puts every setting back to the mod's defaults (the old file is kept in the doctor's backups).
+  Start embalmedeats.json afresh (the old one is kept) (/doctor fix doctor:reset-config embalmedeats.json)
+• It changes the game's code in 48 place(s), 0 of them shared with other mods
+  BarrelRecipe.TryCraftNow: runs before it
+  BlockContainer.RequiresTransitionableTicking: runs before it
+  BlockContainer.UpdateAndGetTransitionStates: runs before it
+  BlockCookedContainer.UpdateAndGetTransitionStates: runs before it
+  BlockCookedContainerBase.HandbookPageCodeForStack: runs after it
+  BlockCookingContainer.CanSmelt: runs before it
+  BlockCrock.HandbookPageCodeForStack: runs after it
+  BlockCrock.UpdateAndGetTransitionStates: runs before it
+  BlockEntityBarrel.FindMatchingRecipe: runs after it
+  BlockEntityDisplay.applyDefaultTranforms: runs after it
+  BlockEntityDisplayCase.OnInteract: runs before it
+  BlockEntityGroundStorage.OnPlayerInteractStart: runs before it
+  ... and 36 more
+  Mods patch the game's own code where it offers no other way in. It is normal, but it is also what breaks first when the game updates, and two mods patching the same place can get in each other's way.
+
+== Checks from your mods ==
+✓ Embalmed Eats: All 48 of its changes to the game are in place
+  They are what stop preserved food rotting, feeding you and going into recipes, and what let it go on shelves, in display cases and on the ground.
+✓ Embalmed Eats: It can preserve 667 kinds of food (0 of them from other mods)
+  The game: 667
+  57 foods that normally can't go on the ground can once preserved
+  Embalmed Eats' page (/doctor embalmedeats)
+✓ Embalmed Eats: All 4 switched-on preserving methods work
+  Wax dipping: 1 Beeswax per food in the crafting grid (666 recipes)
+  Wax dipping: no recipe for 1 food(s), because another recipe already makes something from the same two things (the grid can offer only one; they can still be preserved the other ways): Raw cheese (salted) + Beeswax → Raw cheese (waxed)
+  Resin lacquer: 1 Resin per food in the crafting grid (667 recipes)
+  Formaldehyde: 0.25 L of solution per food, sealed for 48 hours
+  Salt and lime cure: 1 curing salt per food, sealed for 120 hours
+
+== Errors and warnings from Embalmed Eats ==
+✓ Nothing from Embalmed Eats in the log this session.
+
+== Next ==
+Switch Embalmed Eats off (/doctor fix doctor:disable-mod embalmedeats) A report about Embalmed Eats (/doctor bugreport embalmedeats) Every mod at a glance (/doctor mods) Back to the check-up (/doctor)
+Saved to ModData/vintagedoctor/last-report-server.txt
+24.11.2026 05:42:02 [Notification] Handling Console Command /doctor item game:redmeat-raw
+24.11.2026 05:42:02 [Notification] == A block or item ==
+• Raw redmeat (game:redmeat-raw) comes from the game itself
+  An item with the code game:redmeat-raw; class Item; run by Vintagestory.API.Common.Item
+  Behaviours: CollectibleBehaviorGroundStorable
+✓ The log has no error or warning that mentions it.
+
+== What your mods say about it ==
+• Embalmed Eats: Can be preserved, because it goes into meals
+  Wax dipping: in the crafting grid with 1 Beeswax per food
+  Resin lacquer: in the crafting grid with 1 Resin per food
+  Formaldehyde: seal it in a barrel with 0.25 L of formaldehyde solution per food, for 48 hours
+  Salt and lime cure: seal it in a barrel with 1 curing salt per food, for 120 hours
+
+== Next ==
+Why can't I craft it? (/doctor craft game:redmeat-raw) Back to the check-up (/doctor)
+Saved to ModData/vintagedoctor/last-report-server.txt
+24.11.2026 05:42:06 [Notification] Handling Console Command /doctor item game:rot
+24.11.2026 05:42:06 [Notification] == A block or item ==
+• Rot (game:rot) comes from the game itself
+  An item with the code game:rot; class Item; run by Vintagestory.API.Common.Item
+  Behaviours: CollectibleBehaviorGroundStorable
+✓ The log has no error or warning that mentions it.
+
+== What your mods say about it ==
+• Embalmed Eats: Can't be preserved, because the server's settings rule it out (NeverPreservable: game:rot)
+  → Server owners can allow it by taking game:rot out of NeverPreservable in ModConfig/embalmedeats.json.
+
+== Next ==
+Why can't I craft it? (/doctor craft game:rot) Back to the check-up (/doctor)
+Saved to ModData/vintagedoctor/last-report-server.txt
+24.11.2026 05:42:10 [Notification] Handling Console Command /doctor fix bus:embalmedeats:cure all
+24.11.2026 05:42:10 [Notification] [Embalmed Eats] Vintage Doctor fix embalmedeats:cure (all): Cured 0 player(s).
+24.11.2026 05:42:10 [Notification] [vintagedoctor] Fix 'bus:embalmedeats:cure' (all) asked for by the console: Cured 0 player(s).
+24.11.2026 05:42:10 [Notification] Cured 0 player(s).
+24.11.2026 05:42:14 [Notification] Handling Console Command /doctor api
+24.11.2026 05:42:14 [Notification] == For mod authors ==
+Other mods can hand the doctor their own checks, fixes, pages and explanations for log messages. This page shows what has been handed over on this side.
+• 0 check(s), 0 fix(es) and 1 page(s) from other mods; 23 log message(s) the doctor can explain.
+    Page from Embalmed Eats: /doctor embalmedeats
+• 2 vintagedoctor.json file(s) read
+  vintagedoctor:config/vintagedoctor.json
+  embalmedeats:config/vintagedoctor.json
+Three ways in: a few lines of C#, the event bus (no reference to the doctor needed), or a JSON file in your mod's assets (no code at all).
+How to hand the doctor your own checks (https://github.com/Comp-any/Vintage-Doctor/blob/main/docs/api.md)
+Saved to ModData/vintagedoctor/last-report-server.txt
+24.11.2026 05:42:18 [Notification] Handling Console Command /doctor log embalmedeats
+24.11.2026 05:42:18 [Notification] == Errors and warnings from Embalmed Eats ==
+✓ Nothing from Embalmed Eats in the log this session.
+Saved to ModData/vintagedoctor/last-report-server.txt
+24.11.2026 05:42:22 [Notification] Handling Console Command /stop 
+24.11.2026 05:42:22 [Notification] Message to all in group 0: Console Admin commenced a server shutdown
+24.11.2026 05:42:22 [Event] Console Admin shuts down server.
+24.11.2026 05:42:22 [Notification] Server stop requested, begin shutdown sequence. Stop reason: Shutdown via server command
+24.11.2026 05:42:22 [Notification] Server ticking has been suspended
+24.11.2026 05:42:22 [Notification] Entering runphase Shutdown
+24.11.2026 05:42:22 [Event] Mods and systems notified, now saving everything...
+24.11.2026 05:42:22 [Event] It pauses.
+24.11.2026 05:42:22 [Event] One last gaze...
+24.11.2026 05:42:22 [Event] Saved player world data...
+24.11.2026 05:42:22 [Event] Saved map regions...
+24.11.2026 05:42:22 [Event] Then all goes quiet...
+24.11.2026 05:42:22 [Event] Saved map chunks...
+24.11.2026 05:42:22 [Event] The waters recede...
+24.11.2026 05:42:22 [Event] Saved loaded chunks...
+24.11.2026 05:42:22 [Event] The mountains fade...
+24.11.2026 05:42:22 [Event] The dark settles in.
+24.11.2026 05:42:22 [Event] Saved generating chunks...
+24.11.2026 05:42:22 [Event] Saved savegamedata...2
+24.11.2026 05:42:22 [Event] World saved! Saved 8 chunks, 1 mapchunks, 16 mapregions.
+24.11.2026 05:42:22 [Event] It sighs...
+24.11.2026 05:42:22 [Event] Shutting down 10 server threads... 
+24.11.2026 05:42:22 [Event] Killed console thread
+24.11.2026 05:42:22 [Event] Alone again...
+24.11.2026 05:42:23 [Event] All threads gracefully shut down
+24.11.2026 05:42:23 [Event] Time to rest.
+24.11.2026 05:42:23 [Event] Doing last tick...
+24.11.2026 05:42:23 [Event] Stopped the server!
+24.11.2026 05:42:23 [Notification] Shut down command executed

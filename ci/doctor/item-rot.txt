@@ -1,0 +1,14 @@
+24.11.2026 05:42:06 [Server Notification] Handling Console Command /doctor item game:rot
+24.11.2026 05:42:06 [Server Notification] == A block or item ==
+• Rot (game:rot) comes from the game itself
+  An item with the code game:rot; class Item; run by Vintagestory.API.Common.Item
+  Behaviours: CollectibleBehaviorGroundStorable
+✓ The log has no error or warning that mentions it.
+
+== What your mods say about it ==
+• Embalmed Eats: Can't be preserved, because the server's settings rule it out (NeverPreservable: game:rot)
+  → Server owners can allow it by taking game:rot out of NeverPreservable in ModConfig/embalmedeats.json.
+
+== Next ==
+Why can't I craft it? (/doctor craft game:rot) Back to the check-up (/doctor)
+Saved to ModData/vintagedoctor/last-report-server.txt
