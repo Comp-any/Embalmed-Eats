@@ -6,6 +6,7 @@ Each version's section becomes its GitHub release notes, and from there its chan
 
 - Fixed: with Vintage Creation installed, taking items from the Vintage Creation creative tab could give you the wrong item. Vintage Creation added its tab to Embalmed Eats' preserved-food lists on your game but not on the server, so the tab had 25 entries on your game and 5 on the server (Vintage Doctor showed this as a problem). Embalmed Eats now keeps the creative tabs of the foods it preserves exactly as the server sent them, whatever another mod changes on your game. Vintage Creation 0.44.1 also stops doing it.
 - If another mod does change them, Vintage Doctor's comparison says which tabs it added or took away and that Embalmed Eats put them back.
+- Fixed: salted raw cheese + beeswax in the crafting grid was both the game's cheese waxing and Embalmed Eats' wax recipe for that cheese, and the grid can only offer one of them (found by Vintage Doctor 1.3.0). Embalmed Eats no longer makes a wax or resin recipe from two things another recipe already uses, so cheese waxing is the game's again. Salted raw cheese can still be preserved with resin, formaldehyde or salt and lime. Vintage Doctor's methods card lists anything left out this way.
 
 ## 1.2.1
 

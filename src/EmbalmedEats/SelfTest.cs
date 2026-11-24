@@ -161,6 +161,33 @@ public static class SelfTest
             return null;
         });
 
+        Check("wax and resin recipes never take another recipe's ingredients", () =>
+        {
+            // The grid can offer only one result for one set of ingredients (Vintage Doctor 1.3.0 found salted raw
+            // cheese + beeswax: the game's own cheese waxing, and our wax recipe for that cheese)
+            static string Pair(GridRecipe r) => string.Join("+", r.ResolvedIngredients.Where(i => i != null)
+                .Select(i => i.Type + ":" + i.Code).OrderBy(s => s, StringComparer.Ordinal));
+            var others = new Dictionary<string, GridRecipe>(StringComparer.Ordinal);
+            foreach (GridRecipe r in world.GridRecipes)
+            {
+                if (r?.ResolvedIngredients == null || !r.Enabled || r.Name?.Domain == EmbalmedEatsModSystem.ModId || r.ResolvedIngredients.Count(i => i != null) != 2) continue;
+                others.TryAdd(Pair(r), r);
+            }
+            foreach (GridRecipe ours in GridRecipeGenerator.Recipes)
+            {
+                if (others.TryGetValue(Pair(ours), out GridRecipe? theirs)) return $"{ours.Name} has the ingredients of {theirs.Name} ({theirs.Output?.Code})";
+            }
+
+            Item? cheese = world.GetItem(new AssetLocation("game:rawcheese-salted"));
+            if (cheese == null || !cfg.EnableWaxDipping) return null; // nothing more to check without the game's cheese
+            GridRecipe? waxing = GridRecipeGenerator.TakenBy(world, cheese, beeswax!);
+            if (waxing == null) return "the game's cheese waxing (salted raw cheese + beeswax) isn't found";
+            if (waxing.Output?.Code?.Path != "rawcheese-waxed") return "salted raw cheese + beeswax makes " + waxing.Output?.Code;
+            if (!GridRecipeGenerator.Skipped.Any(s => s.food == cheese && s.preservative == beeswax)) return "salted raw cheese wasn't left out of the wax recipes";
+            if (GridRecipeGenerator.TakenBy(world, meat!, beeswax!) != null) return "raw meat + beeswax counts as another recipe's";
+            return null;
+        });
+
         Check("wax recipe makes a preserved copy of the same food", () =>
         {
             if (waxRecipe?.ResolvedIngredients == null) return "no resolved wax recipe for raw meat";

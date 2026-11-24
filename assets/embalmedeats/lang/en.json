@@ -99,6 +99,7 @@
 	"doctor-method-no-recipes-advice": "Making the recipes failed when the server started; the log says why.",
 	"doctor-method-too-many": "Its {0} can't be done: it needs {1} per food, but a stack holds only {2}",
 	"doctor-method-grid-ok": "{0}: {2} {1} per food in the crafting grid ({3} recipes)",
+	"doctor-method-grid-skipped": "{0}: no recipe for {1} food(s), because another recipe already makes something from the same two things (the grid can offer only one; they can still be preserved the other ways): {2}",
 	"doctor-method-item-missing": "Its {0} can't work: its own item {1} is missing",
 	"doctor-method-formaldehyde-norecipe": "Formaldehyde solution can't be made: no barrel recipe makes it",
 	"doctor-method-ingredient-missing": "Missing from the game: {0}",

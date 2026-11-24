@@ -132,8 +132,12 @@ if [ "$mode" = doctor ]; then
   expect() { # file text what
     if grep -qF -- "$2" "$1"; then echo "ok: $3"; else echo "MISSING: $3 ($1 has no '$2')"; failed=1; fi
   }
+  refuse() { # file text what
+    if grep -qF -- "$2" "$1"; then echo "FOUND: $3 ($1 has '$2')"; failed=1; else echo "ok: $3"; fi
+  }
   {
-    expect ci/doctor/overview.txt "Embalmed Eats: All" "the check-up has Embalmed Eats' cards"
+    expect ci/doctor/overview.txt "of its changes to the game are in place" "the check-up has Embalmed Eats' cards"
+    refuse ci/doctor/overview.txt "(Embalmed Eats, grid/" "no generated recipe has another recipe's ingredients (Vintage Doctor 1.3.0's clash check)"
     expect ci/doctor/overview.txt "Something is wrong with preserved food" "the check-up offers our question"
     expect ci/doctor/page.txt "What counts as food" "/doctor embalmedeats is our page"
     expect ci/doctor/page-item.txt "Feeds you:" "/doctor embalmedeats item is the item's rules"
@@ -145,6 +149,6 @@ if [ "$mode" = doctor ]; then
       if grep -q "embalmedeats:doctor-" "$f"; then echo "MISSING TEXT in $f"; failed=1; fi
     done
   } | tee ci/doctor/expectations.txt
-  grep -q "^MISSING" ci/doctor/expectations.txt && { echo "Vintage Doctor didn't show what it should"; exit 1; }
+  grep -qE "^(MISSING|FOUND)" ci/doctor/expectations.txt && { echo "Vintage Doctor didn't show what it should"; exit 1; }
 fi
 echo "SMOKE TEST PASSED ($mode)"

@@ -206,6 +206,14 @@ public static class ModChecks
                 return;
             }
             working.Add(T(lang, "method-grid-ok", title, ThingName(found[0]), per, recipes));
+            var skipped = GridRecipeGenerator.Skipped.Where(s => s.method == method).ToList();
+            if (skipped.Count > 0)
+            {
+                string examples = string.Join("; ", skipped.Take(4).Select(s =>
+                    ThingName(s.food) + " + " + ThingName(s.preservative) + " → " + (s.other.Output?.ResolvedItemStack?.Collectible is CollectibleObject made ? ThingName(made) : s.other.Output?.Code?.ToString() ?? "?")));
+                if (skipped.Count > 4) examples += " " + T(lang, "and-more", skipped.Count - 4);
+                working.Add(T(lang, "method-grid-skipped", title, skipped.Count, examples));
+            }
         }
 
         Grid(PreservationMethods.Wax, cfg.EnableWaxDipping, cfg.WaxItems, "WaxItems");
