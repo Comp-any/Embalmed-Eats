@@ -1,0 +1,14 @@
+{
+  "Sessions": [
+    {
+      "Time": "2026-11-24 05:36",
+      "GameVersion": "1.22.7",
+      "Mods": {
+        "embalmedeats": "1.2.2",
+        "vintagedoctor": "1.4.0"
+      },
+      "CleanExit": true
+    }
+  ],
+  "CrashLogBytes": 0
+}
